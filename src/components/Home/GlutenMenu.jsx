@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const categories = [
-    "All",
     "Waffles",
     "Crepes",
 ];
@@ -52,7 +51,7 @@ const allItems = [
 
 
 const GlutenMenu = () => {
-    const [selected, setSelected] = useState("All");
+    const [selected, setSelected] = useState("Waffles");
 
     const filtered = selected === "All"
         ? allItems

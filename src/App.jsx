@@ -1,23 +1,49 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import WhyUs from './pages/WhyUs';
-import ScrollToTop from './components/ScrollToTop';
+import React from 'react';
+import Navbar from './components/Navbar';
+import Header from './components/Home/Header';
+import AboutHeader from './components/Home/AboutHeader';
+import LocationInfo from './components/Home/LocationInfo';
+import PassionSection from './components/Home/PassionSection';
+import ExperienceSection from './components/Home/ExperienceSection';
+import CallToAction from './components/Home/CallToAction';
+import WhyusHeader from './components/Home/WhyusHeader';
+import WhyExperience from './components/Home/WhyExperience';
+import SignatureOfferings from './components/Home/SignatureOfferings';
+import PrivateEvents from './components/Home/PrivateEvents';
+import UniqueFeatures from './components/Home/UniqueFeatures';
+import WhyCall from './components/Home/WhyCall';
+import MainMenu from './components/Home/MainMenu';
+import ChildrenMenu from './components/Home/ChildrenMenu';
+import GlutenMenu from './components/Home/GlutenMenu';
+import VeganMenu from './components/Home/VeganMenu';
+import Testimonial from './components/Home/Testimonial';
+import FindUs from './components/Home/Findus';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
+    <>
       <Navbar />
-      <Routes>
-        {/* Define routes for different pages */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/whyus" element={<WhyUs />} />
-        {/* Add more routes as needed */}
-      </Routes>
-    </Router>
+      <Header />
+      <AboutHeader />
+      <LocationInfo />
+      <PassionSection />
+      <ExperienceSection />
+      <CallToAction />
+      <WhyusHeader />
+      <WhyExperience />
+      <SignatureOfferings />
+      <PrivateEvents />
+      <UniqueFeatures />
+      <WhyCall />
+      <MainMenu />
+      <ChildrenMenu />
+      <GlutenMenu />
+      <VeganMenu />
+      <Testimonial />
+      <FindUs />
+      <Footer />
+    </>
   );
 }
 

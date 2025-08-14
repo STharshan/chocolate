@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FiMenu, FiX, FiShoppingCart } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,11 +16,11 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 font-semibold">
-          <Link to="/" className="hover:text-green-400">Home</Link>
-          {/* <Link to="/menu" className="hover:text-green-400">Menu</Link>
-          <Link to="/contact" className="hover:text-green-400">Contact</Link> */}
-          <Link to="/about" className="hover:text-green-400">About</Link>
-          <Link to="/whyus" className="hover:text-green-400">Why Us</Link> {/* Added the Why Us link */}
+          <a href="/" className="hover:text-green-400">Home</a>
+          {/* <a href="/menu" className="hover:text-green-400">Menu</a>
+          <a href="/contact" className="hover:text-green-400">Contact</a> */}
+          <a href="/about" className="hover:text-green-400">About</a>
+          <a href="/whyus" className="hover:text-green-400">Why Us</a> {/* Added the Why Us link */}
         </div>
 
         {/* Desktop Button */}
@@ -43,11 +42,11 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-black text-white px-6 py-4 space-y-4 z-40">
-          <Link to="/" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Home</Link>
-          {/* <Link to="/menu" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Menu</Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Contact</Link> */}
-          <Link to="/about" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">About</Link>
-          <Link to="/whyus" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Why Us</Link> {/* Added Why Us link */}
+          <a href="/" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Home</a>
+          {/* <a href="/menu" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Menu</a>
+          <a href="/contact" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Contact</a> */}
+          <a href="/about" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">About</a>
+          <a href="/whyus" onClick={() => setMenuOpen(false)} className="block hover:text-green-400">Why Us</a> {/* Added Why Us link */}
           <button className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-md hover:bg-[#4a821d] hover:text-white">
             <FiShoppingCart />
             Order Now

@@ -1,6 +1,6 @@
 import React from "react";
 
-export function FindUs() {
+const FindUs = () => {
   return (
     <section className="py-16 px-4 bg-black">
       <div className="max-w-7xl mx-auto text-center">
@@ -22,3 +22,5 @@ export function FindUs() {
     </section>
   );
 };
+
+export default FindUs;

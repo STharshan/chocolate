@@ -11,6 +11,7 @@ import MenuCard from '../components/Home/MenuCard'
 import Contact from '../components/Home/Contact'
 import AboutSection from '../components/Home/AboutSection'
 import Testimonial from '../components/Home/Testimonial'
+import FindUs from '../components/Home/Findus'
 
 const Home = () => {
     return (
@@ -23,10 +24,8 @@ const Home = () => {
             <ChildrenMenu />
             <GlutenMenu />
             <VeganMenu />
-            <MenuCard />
             <Testimonial />
-            <Contact />
-            <AboutSection />
+            <FindUs />
         </div>
     )
 }

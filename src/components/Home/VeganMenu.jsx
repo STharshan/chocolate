@@ -65,7 +65,7 @@ const VeganMenu = () => {
         : allItems.filter((item) => item.category === selected);
 
     return (
-        <section id='menu' className="w-full bg-black text-white py-16 px-6">
+        <section id='Veganmenu' className="w-full bg-black text-white py-16 px-6">
             {/* Title */}
             <div className="text-center mb-8">
                 <h2 className="text-4xl md:text-6xl font-bold mb-5">Vegan Menu</h2>

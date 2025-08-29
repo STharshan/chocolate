@@ -27,9 +27,9 @@ function App() {
       <Header />
       <AboutHeader />
       <LocationInfo />
-      <PassionSection />
-      <ExperienceSection />
-      <CallToAction />
+      {/* <PassionSection /> */}
+      {/* <ExperienceSection /> */}
+      {/* <CallToAction /> */}
       <WhyusHeader />
       <WhyExperience />
       <SignatureOfferings />

@@ -95,7 +95,7 @@ const VeganMenu = () => {
                 {filtered.map((item, i) => (
                     <div
                         key={i}
-                        className="bg-[#0e1b0e]/90 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
+                        className="bg-black rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
                     >
                         <img src={item.image} alt={item.title} className="w-full h-60 object-cover" />
                         <div className="p-4">

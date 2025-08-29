@@ -18,6 +18,7 @@ const PrivateEvents = () => {
     specialRequirements: '',
   });
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
@@ -26,10 +27,10 @@ const PrivateEvents = () => {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle form submission logic here
-    console.log(formData);
+    console.log(formData); // You can replace this with form submission logic
   };
 
   return (
@@ -41,9 +42,10 @@ const PrivateEvents = () => {
         </h2>
         <p className="text-lg text-white mb-12">Perfect spaces for your special occasions</p>
         
+        {/* Event Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Children's Parties */}
-          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731]">
+          {/* Event Card 1 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
               <FaBirthdayCake className="w-16 h-16 text-[#a45731]" />
             </div>
@@ -51,8 +53,8 @@ const PrivateEvents = () => {
             <p className="text-gray-600">Chocolate-themed celebrations that kids will never forget</p>
           </div>
           
-          {/* Date Nights */}
-          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731]">
+          {/* Event Card 2 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
               <FaHeart className="w-16 h-16 text-[#a45731]" />
             </div>
@@ -60,8 +62,8 @@ const PrivateEvents = () => {
             <p className="text-gray-600">Romantic settings perfect for intimate chocolate experiences</p>
           </div>
           
-          {/* Anniversaries */}
-          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731]">
+          {/* Event Card 3 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
               <FaGift className="w-16 h-16 text-[#a45731]" />
             </div>
@@ -69,8 +71,8 @@ const PrivateEvents = () => {
             <p className="text-gray-600">Celebrate milestones with our special anniversary packages</p>
           </div>
           
-          {/* Corporate Events */}
-          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731]">
+          {/* Event Card 4 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
               <FaBuilding className="w-16 h-16 text-[#a45731]" />
             </div>

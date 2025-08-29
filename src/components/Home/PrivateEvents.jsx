@@ -18,6 +18,8 @@ const PrivateEvents = () => {
     specialRequirements: '',
   });
 
+  const [isFormVisible, setIsFormVisible] = useState(false); // State for showing the form
+
   // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -81,163 +83,175 @@ const PrivateEvents = () => {
           </div>
         </div>
         
-        {/* Contact Form CTA */}
-        <div className="mt-16 p-8 rounded-lg shadow-lg bg-white">
-          <h3 className="text-2xl font-bold text-[#a45731] mb-6">Get in Touch to Book Your Event</h3>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Contact Information */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="fullName" className="text-[#a45731]">Full Name:</label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="phoneNumber" className="text-[#a45731]">Phone Number:</label>
-                <input
-                  type="text"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Event Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="eventType" className="text-[#a45731]">Event Type:</label>
-                <input
-                  type="text"
-                  id="eventType"
-                  name="eventType"
-                  value={formData.eventType}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="eventDate" className="text-[#a45731]">Event Date:</label>
-                <input
-                  type="date"
-                  id="eventDate"
-                  name="eventDate"
-                  value={formData.eventDate}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Start and End Time */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="startTime" className="text-[#a45731]">Start Time:</label>
-                <input
-                  type="time"
-                  id="startTime"
-                  name="startTime"
-                  value={formData.startTime}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="endTime" className="text-[#a45731]">End Time:</label>
-                <input
-                  type="time"
-                  id="endTime"
-                  name="endTime"
-                  value={formData.endTime}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Number of Guests */}
-            <div>
-              <label htmlFor="numberOfGuests" className="text-[#a45731]">Expected Number of Guests:</label>
-              <input
-                type="number"
-                id="numberOfGuests"
-                name="numberOfGuests"
-                value={formData.numberOfGuests}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                required
-              />
-            </div>
-
-            {/* Services */}
-            <div className="space-y-4 text-[#a45731]">
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="catering"
-                  name="catering"
-                  checked={formData.catering}
-                  onChange={handleChange}
-                  className="text-[#a45731]"
-                />
-                <label htmlFor="catering">Do you need catering?</label>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="decorations"
-                  name="decorations"
-                  checked={formData.decorations}
-                  onChange={handleChange}
-                  className="text-[#a45731]"
-                />
-                <label htmlFor="decorations">Do you need decorations?</label>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="audioVisual"
-                  name="audioVisual"
-                  checked={formData.audioVisual}
-                  onChange={handleChange}
-                  className="text-[#a45731]"
-                />
-                <label htmlFor="audioVisual">Do you need audio/visual equipment?</label>
-              </div>
-            </div>
-
-            {/* Special Requirements */}
-            <div>
-              <label htmlFor="specialRequirements" className="text-[#a45731]">Other special requirements:</label>
-              <textarea
-                id="specialRequirements"
-                name="specialRequirements"
-                value={formData.specialRequirements}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-              ></textarea>
-            </div>
-
-            {/* Submit Button */}
-            <button type="submit" className="w-full bg-[#a45731] text-white py-2 rounded-md font-semibold transition duration-300 hover:bg-[#a45731]">
-              Submit
-            </button>
-          </form>
+        {/* Contact Form Button */}
+        <div className="mt-16">
+          <button
+            onClick={() => setIsFormVisible(!isFormVisible)} // Toggle form visibility
+            className="bg-[#a45731] text-white py-3 px-6 rounded-md font-semibold transition duration-300 hover:bg-[#a45731] mb-8"
+          >
+            {isFormVisible ? 'Hide Contact Form' : 'Get in Touch to Book Your Event'}
+          </button>
         </div>
+
+        {/* Contact Form */}
+        {isFormVisible && (
+          <div className="p-8 rounded-lg shadow-lg bg-white">
+            <h3 className="text-2xl font-bold text-[#a45731] mb-6">Get in Touch to Book Your Event</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Contact Information */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="fullName" className="text-[#a45731]">Full Name:</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phoneNumber" className="text-[#a45731]">Phone Number:</label>
+                  <input
+                    type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Event Details */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="eventType" className="text-[#a45731]">Event Type:</label>
+                  <input
+                    type="text"
+                    id="eventType"
+                    name="eventType"
+                    value={formData.eventType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="eventDate" className="text-[#a45731]">Event Date:</label>
+                  <input
+                    type="date"
+                    id="eventDate"
+                    name="eventDate"
+                    value={formData.eventDate}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Start and End Time */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="startTime" className="text-[#a45731]">Start Time:</label>
+                  <input
+                    type="time"
+                    id="startTime"
+                    name="startTime"
+                    value={formData.startTime}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="endTime" className="text-[#a45731]">End Time:</label>
+                  <input
+                    type="time"
+                    id="endTime"
+                    name="endTime"
+                    value={formData.endTime}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Number of Guests */}
+              <div>
+                <label htmlFor="numberOfGuests" className="text-[#a45731]">Expected Number of Guests:</label>
+                <input
+                  type="number"
+                  id="numberOfGuests"
+                  name="numberOfGuests"
+                  value={formData.numberOfGuests}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                  required
+                />
+              </div>
+
+              {/* Services */}
+              <div className="space-y-4 text-[#a45731]">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="catering"
+                    name="catering"
+                    checked={formData.catering}
+                    onChange={handleChange}
+                    className="text-[#a45731]"
+                  />
+                  <label htmlFor="catering">Do you need catering?</label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="decorations"
+                    name="decorations"
+                    checked={formData.decorations}
+                    onChange={handleChange}
+                    className="text-[#a45731]"
+                  />
+                  <label htmlFor="decorations">Do you need decorations?</label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="audioVisual"
+                    name="audioVisual"
+                    checked={formData.audioVisual}
+                    onChange={handleChange}
+                    className="text-[#a45731]"
+                  />
+                  <label htmlFor="audioVisual">Do you need audio/visual equipment?</label>
+                </div>
+              </div>
+
+              {/* Special Requirements */}
+              <div>
+                <label htmlFor="specialRequirements" className="text-[#a45731]">Other special requirements:</label>
+                <textarea
+                  id="specialRequirements"
+                  name="specialRequirements"
+                  value={formData.specialRequirements}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                ></textarea>
+              </div>
+
+              {/* Submit Button */}
+              <button type="submit" className="w-full bg-[#a45731] text-white py-2 rounded-md font-semibold transition duration-300 hover:bg-[#a45731]">
+                Submit
+              </button>
+            </form>
+          </div>
+        )}
       </div>
     </section>
   );

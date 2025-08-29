@@ -41,14 +41,16 @@ const Testimonial = () => {
     <section className="w-full bg-black text-white py-16 px-4">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-6xl font-bold mb-5">What Our Customers Say</h2>
+        <h2 className="text-4xl md:text-6xl font-bold mb-5 text-[#a45731]">
+          What Our Customers Say
+        </h2>
         <p className="text-gray-300 text-sm md:text-lg font-semibold">
           Don’t just take our word for it – hear from our satisfied customers
         </p>
       </div>
 
       {/* Testimonial Card */}
-      <div className="max-w-3xl mx-auto bg-[#0e1b0e]/70 backdrop-blur border-1 border-[#163002] rounded-lg p-8 relative shadow-md transition-all duration-300">
+      <div className="max-w-3xl mx-auto bg-[#0e1b0e]/70 backdrop-blur border-1 border-[#a45731] rounded-lg p-8 relative shadow-md transition-all duration-300">
         {/* Gold stars */}
         <div className="text-center mb-4 text-yellow-400 text-xl">
           {'★'.repeat(5)}
@@ -60,14 +62,14 @@ const Testimonial = () => {
         </div>
 
         {/* Name */}
-        <div className="text-center mt-6 font-bold text-[#346909] text-lg">
+        <div className="text-center mt-6 font-bold text-[#a45731] text-lg">
           {testimonials[index].name}
         </div>
 
         {/* Left arrow button with icon */}
         <button
           onClick={prev}
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-[#346909] rounded w-10 h-10 flex items-center justify-center text-white transition duration-300"
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-[#a45731] rounded w-10 h-10 flex items-center justify-center text-white transition duration-300"
         >
           <FiChevronLeft className="w-5 h-5" />
         </button>
@@ -75,21 +77,23 @@ const Testimonial = () => {
         {/* Right arrow button with icon */}
         <button
           onClick={next}
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-[#346909] rounded w-10 h-10 flex items-center justify-center text-white transition duration-300"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-[#a45731] rounded w-10 h-10 flex items-center justify-center text-white transition duration-300"
         >
           <FiChevronRight className="w-5 h-5" />
         </button>
       </div>
+      
+      {/* Dot Indicators */}
       <div className="flex justify-center mt-6 space-x-2">
-          {testimonials.map((_, i) => (
-            <div
-              key={i}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === index ? 'bg-[#346909]' : 'bg-gray-500'
-              }`}
-            ></div>
-          ))}
-        </div>
+        {testimonials.map((_, i) => (
+          <div
+            key={i}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === index ? 'bg-[#a45731]' : 'bg-gray-500'
+            }`}
+          ></div>
+        ))}
+      </div>
     </section>
   );
 };

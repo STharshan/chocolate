@@ -22,7 +22,7 @@ const Footer = () => {
               href="https://www.facebook.com/p/Chocoholic-desserts-61561513890525/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-700"
+              className="hover:text-[#a45731]"
             >
               <FaFacebookF />
             </a>
@@ -30,7 +30,7 @@ const Footer = () => {
               href="https://www.instagram.com/explore/locations/369434692915110/chocoholic-desserts/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-pink-500"
+              className="hover:text-[#a45731]"
             >
               <FaInstagram />
             </a>
@@ -38,7 +38,7 @@ const Footer = () => {
               href="https://x.com/search?q=%23Chocoholic&src=hashtag_click&f=user"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-sky-500"
+              className="hover:text-[#a45731]"
             >
               <FaTwitter />
             </a>
@@ -47,25 +47,25 @@ const Footer = () => {
 
         {/* Column 2 */}
         <div>
-          <h3 className="text-xl font-bold mb-5">Quick Links</h3>
+          <h3 className="text-xl font-bold mb-5 text-[#a45731]">Quick Links</h3>
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
             <li>
-              <a href="#header" className="hover:text-gray-300">
+              <a href="#header" className="hover:text-[#a45731]">
                 Home
               </a>
             </li>
             <li>
-              <a href="#menu" className="hover:text-gray-300">
+              <a href="#menu" className="hover:text-[#a45731]">
                 Menu
               </a>
             </li>
             <li>
-              <a href="#about" className="hover:text-gray-300">
+              <a href="#about" className="hover:text-[#a45731]">
                 About
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-gray-300">
+              <a href="#contact" className="hover:text-[#a45731]">
                 Contact
               </a>
             </li>
@@ -74,35 +74,35 @@ const Footer = () => {
 
         {/* Column 3 */}
         <div>
-          <h3 className="text-xl font-bold mb-5">Our Menu</h3>
+          <h3 className="text-xl font-bold mb-5 text-[#a45731]">Our Menu</h3>
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
             <li>
-              <a href="#menu" className="hover:text-gray-300">
+              <a href="#menu" className="hover:text-[#a45731]">
                 Main Menu
               </a>
             </li>
             <li>
-              <a href="#chilmenu" className="hover:text-gray-300">
+              <a href="#chilmenu" className="hover:text-[#a45731]">
                 Children's Menu
               </a>
             </li>
             <li>
-              <a href="#Glutenmenu" className="hover:text-gray-300">
+              <a href="#Glutenmenu" className="hover:text-[#a45731]">
                 Gluten Free Menu
               </a>
             </li>
             <li>
-              <a href="#Veganmenu" className="hover:text-gray-300">
+              <a href="#Veganmenu" className="hover:text-[#a45731]">
                 Vegan Menu
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">
+              <a href="#" className="hover:text-[#a45731]">
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">
+              <a href="#" className="hover:text-[#a45731]">
                 Terms & Conditions
               </a>
             </li>
@@ -111,23 +111,23 @@ const Footer = () => {
 
         {/* Column 4 */}
         <div>
-          <h3 className="text-xl font-bold mb-5">Contact Info</h3>
+          <h3 className="text-xl font-bold mb-5 text-[#a45731]">Contact Info</h3>
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
             <li className="flex items-start gap-2">
-              <FiMapPin className="mt-1 text-yellow-500" />
+              <FiMapPin className="mt-1 text-[#a45731]" />
               Watling St,<br />
               Hinckley LE10 3ED,<br />
               United Kingdom
             </li>
             <li className="flex items-center gap-2">
-              <FiPhone className="text-yellow-500" />
+              <FiPhone className="text-[#a45731]" />
               +44 1455 721021
             </li>
             <li className="flex items-center gap-2">
-              <FiMail className="text-yellow-500" />
+              <FiMail className="text-[#a45731]" />
               <a
                 href="mailto:info@chocoholics.co.uk"
-                className="hover:text-gray-300"
+                className="hover:text-[#a45731]"
               >
                 info@chocoholics.co.uk
               </a>
@@ -150,7 +150,7 @@ const Footer = () => {
             href="https://www.ansely.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-yellow-500 hover:underline"
+            className="text-[#a45731] hover:underline"
           >
             Ansely
           </a>

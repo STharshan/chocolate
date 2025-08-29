@@ -13,13 +13,13 @@ const CallToAction = () => {
       <div className="flex justify-center gap-4">
         <a
           href="#"
-          className="bg-white text-[#346909] py-2 px-6 rounded-md text-lg font-semibold transition hover:bg-[#a45731] hover:text-white"
+          className="bg-[#a45731] text-white py-2 px-6 rounded-md text-lg font-semibold transition hover:bg-white hover:text-[#a45731]"
         >
           Visit Us Today
         </a>
         <a
           href="#"
-          className="bg-transparent border-2 border-white text-white py-2 px-6 rounded-md text-lg font-semibold transition hover:bg-white hover:text-[#346909]"
+          className="bg-transparent border-2 border-white text-white py-2 px-6 rounded-md text-lg font-semibold transition hover:bg-white hover:text-[#a45731]"
         >
           Download Voucher
         </a>

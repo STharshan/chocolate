@@ -326,7 +326,7 @@ const MainMenu = () => {
             key={i}
             className="bg-black rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
           >
-            <img src={item.image} alt={item.title} className="w-full h-60 object-cover" />
+            <img src={item.image} alt={item.title} className="w-full h-60 object-contain bg-black"  />
             <div className="p-4">
               <div className="mb-2">
                 <h3 className="text-lg font-bold text-[#a45731]">{item.title}</h3>

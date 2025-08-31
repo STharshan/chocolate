@@ -35,7 +35,7 @@ function App() {
       <SignatureOfferings />
       <PrivateEvents />
       <UniqueFeatures />
-      <WhyCall />
+      {/* <WhyCall /> */}
       <MainMenu />
       <ChildrenMenu />
       <GlutenMenu />

@@ -31,27 +31,20 @@ const allItems = [
         title: "Strawberry Sensation",
         category: "Crepes",
         fullprice: "£9.00",
-        image: "/Strawberry Heaven Waffle.jpg",
+        image: "/Crepes.jpg",
     },
 
     {
         title: "Banana Delight",
         category: "Crepes",
         fullprice: "£9.00",
-        image: "/Gluten Free-Vegan Crepes-56.jpg",
+        image: "/Vegan-Crepes.jpg",
     },
     {
         title: "Raspberry Heaven",
         category: "Crepes",
         fullprice: "£9.00",
-        image: "/Raspberry Heaven Waffle.jpg",
-    },
-        {
-        title: "Sorbet",
-        category: "Crepes",
-        fullprice: "£4.50",
-        halfprice: "£2.50",
-        image: "/Strawberry Heaven Waffle.jpg",
+        image: "/VeganCrepes.jpg",
     },
 
 ];

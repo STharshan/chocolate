@@ -31,20 +31,20 @@ const allItems = [
         title: "Strawberry Mania",
         category: "Crepes",
         fullprice: "£9.00",
-        image: "/Mint Mania Waffle.jpg",
+        image: "/Crepes.jpg",
     },
 
     {
         title: "Raspberry Haven",
         category: "Crepes",
         fullprice: "£9.00",
-        image: "/Raspberry Heaven Waffle.jpg",
+        image: "/VeganCrepes.jpg",
     },
     {
         title: "Banana",
         category: "Crepes",
         fullprice: "£9.00",
-        image: "/Banoffee Waffle.jpg",
+        image: "/Vegan-Crepes.jpg",
     },
 
 ];

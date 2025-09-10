@@ -1,49 +1,24 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Header from './components/Home/Header';
-import AboutHeader from './components/Home/AboutHeader';
-import LocationInfo from './components/Home/LocationInfo';
-import PassionSection from './components/Home/PassionSection';
-import ExperienceSection from './components/Home/ExperienceSection';
-import CallToAction from './components/Home/CallToAction';
-import WhyusHeader from './components/Home/WhyusHeader';
-import WhyExperience from './components/Home/WhyExperience';
-import SignatureOfferings from './components/Home/SignatureOfferings';
-import PrivateEvents from './components/Home/PrivateEvents';
-import UniqueFeatures from './components/Home/UniqueFeatures';
-import WhyCall from './components/Home/WhyCall';
-import MainMenu from './components/Home/MainMenu';
-import ChildrenMenu from './components/Home/ChildrenMenu';
-import GlutenMenu from './components/Home/GlutenMenu';
-import VeganMenu from './components/Home/VeganMenu';
-import Testimonial from './components/Home/Testimonial';
-import FindUs from './components/Home/Findus';
-import Footer from './components/Footer';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import TermsConditions from "./components/Term";
+import Home from "./pages/Home";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <>
+    <Router>
+      <ScrollToTop />
       <Navbar />
-      <Header />
-      <AboutHeader />
-      <LocationInfo />
-      <PassionSection />
-      <ExperienceSection />
-      <CallToAction />
-      <WhyusHeader />
-      <WhyExperience />
-      <SignatureOfferings />
-      <PrivateEvents />
-      <UniqueFeatures />
-      <WhyCall />
-      <MainMenu />
-      <ChildrenMenu />
-      <GlutenMenu />
-      <VeganMenu />
-      <Testimonial />
-      <FindUs />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

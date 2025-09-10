@@ -15,35 +15,88 @@ const Footer = () => {
             alt="logo"
           />
           <p className="text-md font-semibold text-gray-400 mb-4">
-            Where comfort meets crave-worthy. Bite into our signature burgers, golden fries, and urban-inspired eats in the heart of the city.
+            Where comfort meets crave-worthy. Bite into our signature burgers,
+            golden fries, and urban-inspired eats in the heart of the city.
           </p>
           <div className="flex space-x-4 text-white">
-            <a target="_blank" href="https://web.facebook.com/people/Smashed-Ashby/61570892613518/?_rdc=1&_rdr#" className="hover:text-blue-700"><FaFacebookF /></a>
-            <a target="_blank" href="https://www.instagram.com/smashed.ashby/" className="hover:text-pink-500"><FaInstagram /></a>
-            <a target="_blank" href="https://twitter.com/yourhandle" className="hover:text-sky-500"><FaTwitter /></a>
+            <a
+              href="https://www.facebook.com/p/Chocoholic-desserts-61561513890525/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#a45731]"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.instagram.com/explore/locations/369434692915110/chocoholic-desserts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#a45731]"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://x.com/search?q=%23Chocoholic&src=hashtag_click&f=user"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#a45731]"
+            >
+              <FaTwitter />
+            </a>
           </div>
         </div>
 
         {/* Column 2 */}
         <div>
-          <h3 className="text-xl font-bold mb-5">Quick Links</h3>
+          <h3 className="text-xl font-bold mb-5 text-[#a45731]">Quick Links</h3>
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
-            <li><a href="#header" className="hover:text-gray-300">Home</a></li>
-            <li><a href="#menu" className="hover:text-gray-300">Menu</a></li>
-            <li><a href="#about" className="hover:text-gray-300">About</a></li>
-            <li><a href="#contact" className="hover:text-gray-300">Contact</a></li>
+            <li>
+              <a href="#header" className="hover:text-[#a45731]">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#menu" className="hover:text-[#a45731]">
+                Menu
+              </a>
+            </li>
+            <li>
+              <a href="#about" className="hover:text-[#a45731]">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-[#a45731]">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Column 3 */}
         <div>
-          <h3 className="text-xl font-bold mb-5">Our Menu</h3>
+          <h3 className="text-xl font-bold mb-5 text-[#a45731]">Our Menu</h3>
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
-            <li><a href="#" className="hover:text-gray-300">Chef Specials</a></li>
-            <li><a href="#" className="hover:text-gray-300">Burgers</a></li>
-            <li><a href="#" className="hover:text-gray-300">Tawa</a></li>
-            <li><a href="#" className="hover:text-gray-300">Kebab Rools</a></li>
-            <li><a href="#" className="hover:text-gray-300">Biriyani</a></li>
+            <li>
+              <a href="#menu" className="hover:text-[#a45731]">
+                Main Menu
+              </a>
+            </li>
+            <li>
+              <a href="#chilmenu" className="hover:text-[#a45731]">
+                Children's Menu
+              </a>
+            </li>
+            <li>
+              <a href="#Glutenmenu" className="hover:text-[#a45731]">
+                Gluten Free Menu
+              </a>
+            </li>
+            <li>
+              <a href="#Veganmenu" className="hover:text-[#a45731]">
+                Vegan Menu
+              </a>
+            </li>
             <li>
               <Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link> {/* Updated link */}
             </li>
@@ -55,18 +108,26 @@ const Footer = () => {
 
         {/* Column 4 */}
         <div>
-          <h3 className="text-xl font-bold mb-5">Contact Info</h3>
+          <h3 className="text-xl font-bold mb-5 text-[#a45731]">Contact Info</h3>
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
             <li className="flex items-start gap-2">
-              <FiMapPin className="mt-1 text-yellow-500" />
-              85a Market Street,<br />
-              Ashby LE65 1AH
+              <FiMapPin className="mt-1 text-[#a45731]" />
+              Watling St,<br />
+              Hinckley LE10 3ED,<br />
+              United Kingdom
             </li>
             <li className="flex items-center gap-2">
-              <FiPhone className="text-yellow-500" />01530 648 708
+              <FiPhone className="text-[#a45731]" />
+              +44 1455 721021
             </li>
             <li className="flex items-center gap-2">
-              <FiMail className="text-yellow-500" />smashedashby@gmail.com
+              <FiMail className="text-[#a45731]" />
+              <a
+                href="mailto:info@chocoholics.co.uk"
+                className="hover:text-[#a45731]"
+              >
+                info@chocoholics.co.uk
+              </a>
             </li>
           </ul>
         </div>
@@ -76,16 +137,16 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="text-center text-md text-white font-semibold">
-        © 2025 Chocoholics. All rights reserved.
+        © 2025 Chocoholics Desserts. All rights reserved.
       </div>
       <div className=" mt-2 text-center font-semibold">
         <p>
           Powered by{" "}
           <a
-            href="https://www.ansely.co.uk/"  // Replace this with the actual Ansely website
+            href="https://www.ansely.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-yellow-500 hover:underline"
+            className="text-[#a45731] hover:underline"
           >
             Ansely
           </a>

@@ -1,49 +1,260 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaBirthdayCake, FaHeart, FaGift, FaBuilding } from 'react-icons/fa';
 
 const PrivateEvents = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phoneNumber: '',
+    email: '',
+    company: '',
+    eventType: '',
+    eventDate: '',
+    startTime: '',
+    endTime: '',
+    numberOfGuests: '',
+    catering: false,
+    decorations: false,
+    audioVisual: false,
+    specialRequirements: '',
+  });
+
+  const [isFormVisible, setIsFormVisible] = useState(false); // State for showing the form
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData); // You can replace this with form submission logic
+  };
+
   return (
-    <section className="bg-black py-16 px-4">
+    <section className="bg-black py-16 px-6">
       <div className="max-w-screen-xl mx-auto text-center">
-        <h2 className="text-3xl font-extrabold text-brown-700 mb-8 text-white">Private Functions & Events</h2>
-        <p className="text-lg text-gray-400 mb-12">Perfect spaces for your special occasions</p>
+        {/* Heading */}
+        <h2 className="text-3xl font-extrabold text-[#a45731] mb-8">
+          Private Functions & Events
+        </h2>
+        <p className="text-lg text-white mb-12">Perfect spaces for your special occasions</p>
         
+        {/* Event Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="bg-orange-50 p-6 rounded-lg shadow-lg">
+          {/* Event Card 1 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
-              <FaBirthdayCake className="w-16 h-16 text-brown-700" />
+              <FaBirthdayCake className="w-16 h-16 text-[#a45731]" />
             </div>
-            <h3 className="text-xl font-semibold text-brown-700">Children's Parties</h3>
+            <h3 className="text-xl font-semibold text-[#a45731]">Children's Parties</h3>
             <p className="text-gray-600">Chocolate-themed celebrations that kids will never forget</p>
           </div>
           
-          <div className="bg-orange-50 p-6 rounded-lg shadow-lg">
+          {/* Event Card 2 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
-              <FaHeart className="w-16 h-16 text-brown-700" />
+              <FaHeart className="w-16 h-16 text-[#a45731]" />
             </div>
-            <h3 className="text-xl font-semibold text-brown-700">Date Nights</h3>
+            <h3 className="text-xl font-semibold text-[#a45731]">Date Nights</h3>
             <p className="text-gray-600">Romantic settings perfect for intimate chocolate experiences</p>
           </div>
           
-          <div className="bg-orange-50 p-6 rounded-lg shadow-lg">
+          {/* Event Card 3 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
-              <FaGift className="w-16 h-16 text-brown-700" />
+              <FaGift className="w-16 h-16 text-[#a45731]" />
             </div>
-            <h3 className="text-xl font-semibold text-brown-700">Anniversaries</h3>
+            <h3 className="text-xl font-semibold text-[#a45731]">Anniversaries</h3>
             <p className="text-gray-600">Celebrate milestones with our special anniversary packages</p>
           </div>
           
-          <div className="bg-orange-50 p-6 rounded-lg shadow-lg">
+          {/* Event Card 4 */}
+          <div className="bg-white p-6 rounded-lg shadow-lg border-4 border-[#a45731] hover:scale-105 transition transform duration-300 ease-in-out">
             <div className="flex justify-center mb-4">
-              <FaBuilding className="w-16 h-16 text-brown-700" />
+              <FaBuilding className="w-16 h-16 text-[#a45731]" />
             </div>
-            <h3 className="text-xl font-semibold text-brown-700">Corporate Events</h3>
+            <h3 className="text-xl font-semibold text-[#a45731]">Corporate Events</h3>
             <p className="text-gray-600">Business meetings with a sweet twist that impresses clients</p>
           </div>
         </div>
+        
+        {/* Contact Form Button */}
+        <div className="mt-16">
+          <button
+            onClick={() => setIsFormVisible(!isFormVisible)} // Toggle form visibility
+            className="bg-[#a45731] text-white py-3 px-6 rounded-md font-semibold transition duration-300 hover:bg-[#a45731] mb-8"
+          >
+            {isFormVisible ? 'Hide Contact Form' : 'Get in Touch to Book Your Event'}
+          </button>
+        </div>
+
+        {/* Contact Form */}
+        {isFormVisible && (
+          <div className="p-8 rounded-lg shadow-lg bg-white">
+            <h3 className="text-2xl font-bold text-[#a45731] mb-6">Get in Touch to Book Your Event</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Contact Information */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="fullName" className="text-[#a45731]">Full Name:</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phoneNumber" className="text-[#a45731]">Phone Number:</label>
+                  <input
+                    type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Event Details */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="eventType" className="text-[#a45731]">Event Type:</label>
+                  <input
+                    type="text"
+                    id="eventType"
+                    name="eventType"
+                    value={formData.eventType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="eventDate" className="text-[#a45731]">Event Date:</label>
+                  <input
+                    type="date"
+                    id="eventDate"
+                    name="eventDate"
+                    value={formData.eventDate}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Start and End Time */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="startTime" className="text-[#a45731]">Start Time:</label>
+                  <input
+                    type="time"
+                    id="startTime"
+                    name="startTime"
+                    value={formData.startTime}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="endTime" className="text-[#a45731]">End Time:</label>
+                  <input
+                    type="time"
+                    id="endTime"
+                    name="endTime"
+                    value={formData.endTime}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Number of Guests */}
+              <div>
+                <label htmlFor="numberOfGuests" className="text-[#a45731]">Expected Number of Guests:</label>
+                <input
+                  type="number"
+                  id="numberOfGuests"
+                  name="numberOfGuests"
+                  value={formData.numberOfGuests}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                  required
+                />
+              </div>
+
+              {/* Services */}
+              <div className="space-y-4 text-[#a45731]">
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="catering"
+                    name="catering"
+                    checked={formData.catering}
+                    onChange={handleChange}
+                    className="text-[#a45731]"
+                  />
+                  <label htmlFor="catering">Do you need catering?</label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="decorations"
+                    name="decorations"
+                    checked={formData.decorations}
+                    onChange={handleChange}
+                    className="text-[#a45731]"
+                  />
+                  <label htmlFor="decorations">Do you need decorations?</label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="audioVisual"
+                    name="audioVisual"
+                    checked={formData.audioVisual}
+                    onChange={handleChange}
+                    className="text-[#a45731]"
+                  />
+                  <label htmlFor="audioVisual">Do you need audio/visual equipment?</label>
+                </div>
+              </div>
+
+              {/* Special Requirements */}
+              <div>
+                <label htmlFor="specialRequirements" className="text-[#a45731]">Other special requirements:</label>
+                <textarea
+                  id="specialRequirements"
+                  name="specialRequirements"
+                  value={formData.specialRequirements}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                ></textarea>
+              </div>
+
+              {/* Submit Button */}
+              <button type="submit" className="w-full bg-[#a45731] text-white py-2 rounded-md font-semibold transition duration-300 hover:bg-[#a45731]">
+                Submit
+              </button>
+            </form>
+          </div>
+        )}
       </div>
     </section>
   );
-}
+};
 
 export default PrivateEvents;

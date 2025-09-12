@@ -78,7 +78,7 @@ const TermsConditions = () => {
                       </p>
                       <div className="text-white">
                           <p><strong>Chocoholic Desserts</strong></p>
-                          <p>Email: <a href="mailto:info@chocoholics.co.uk" className="text-[#a45731] hover:underline">info@chocoholics.co.uk</a></p>
+                          <p>Email: <a href="mailto:chocoholicsdesserts@gmail.com" className="text-[#a45731] hover:underline">chocoholicsdesserts@gmail.com</a></p>
                           <p>Phone: +44 1455 721021</p>
                           <p>Address: Watling St, Hinckley LE10 3ED, United Kingdom</p>
                       </div>

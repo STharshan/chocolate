@@ -123,10 +123,10 @@ const Footer = () => {
             <li className="flex items-center gap-2">
               <FiMail className="text-[#a45731]" />
               <a
-                href="mailto:info@chocoholics.co.uk"
+                href="mailto:chocoholicsdesserts@gmail.com"
                 className="hover:text-[#a45731]"
               >
-                info@chocoholics.co.uk
+                chocoholicsdesserts@gmail.com
               </a>
             </li>
           </ul>

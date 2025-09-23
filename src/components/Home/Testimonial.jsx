@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { FiStar } from 'react-icons/fi';
@@ -8,6 +8,8 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const testimonials = [
   {
@@ -48,6 +50,15 @@ function InitialAvatar({ name }) {
 }
 
 export default function ReviewsSlider() {
+  useEffect(() => {
+    // Initialize AOS when the component mounts
+    AOS.init({
+      duration: 1000,  // Animation duration
+      easing: 'ease-in-out',  // Easing type
+      once: true,  // Ensures the animation only triggers once
+    });
+  }, []);
+
   return (
     <section className="w-full bg-black text-white py-16 px-4 relative">
       {/* Override Swiper dot colors */}
@@ -66,7 +77,7 @@ export default function ReviewsSlider() {
       `}</style>
 
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-4xl md:text-6xl font-bold mb-5 text-[#a45731]">
             What Our Customers Say
           </h2>
@@ -93,7 +104,10 @@ export default function ReviewsSlider() {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <article className="h-full rounded-2xl border border-[#a45731]/30 bg-black p-6 shadow-lg transition hover:border-[#a45731]/70 group relative">
+              <article className="h-full rounded-2xl border border-[#a45731]/30 bg-black p-6 shadow-lg transition hover:border-[#a45731]/70 group relative"
+                data-aos="fade-up" // Apply animation to testimonial cards
+                data-aos-delay={`${idx * 200}`} // Stagger the animation based on index
+              >
                 <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#a45731]/10 via-transparent to-transparent" />
                 <div className="flex items-center gap-3">
                   <InitialAvatar name={t.name} />
@@ -125,7 +139,7 @@ export default function ReviewsSlider() {
         </Swiper>
 
         {/* Custom navigation arrows */}
-        <div className="flex justify-center gap-6 mt-10">
+        <div className="flex justify-center gap-6 mt-10" data-aos="fade-up" data-aos-delay="1000">
           <button className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white transition">
             <BsArrowLeft className="w-5 h-5" />
           </button>

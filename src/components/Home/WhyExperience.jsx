@@ -1,13 +1,26 @@
-// File: WhyExperience.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const WhyExperience = () => {
+  useEffect(() => {
+    // Initialize AOS with desired settings
+    AOS.init({
+      duration: 1000,  // Animation duration
+      easing: 'ease-in-out',  // Easing type
+      once: true,  // Ensures the animation only triggers once
+    });
+  }, []);
+
   return (
     <div className="bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
           {/* Master Chocolatiers Section */}
-          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-[#a45731]">
+          <div
+            className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-[#a45731]"
+            data-aos="fade-up"  // Add fade-up animation to the first section
+          >
             <h2 className="text-2xl sm:text-3xl font-semibold text-[#a45731] mb-2">
               Master Chocolatiers
             </h2>
@@ -15,8 +28,8 @@ const WhyExperience = () => {
               Live Chocolate Making
             </button>
 
-            {/* Keep video same ratio on all devices (16:9) */}
-            <div className="mb-6 rounded-xl overflow-hidden bg-black aspect-video">
+            {/* Video with animation */}
+            <div className="mb-6 rounded-xl overflow-hidden bg-black aspect-video" data-aos="zoom-in">
               <video
                 src="/choco.mp4"
                 autoPlay
@@ -35,7 +48,10 @@ const WhyExperience = () => {
           </div>
 
           {/* Interactive Experience Section */}
-          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-[#a45731]">
+          <div
+            className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-[#a45731]"
+            data-aos="fade-up"  // Add fade-up animation to the second section
+          >
             <h2 className="text-2xl sm:text-3xl font-semibold text-[#a45731] mb-2">
               Interactive Experience
             </h2>
@@ -43,8 +59,8 @@ const WhyExperience = () => {
               Watch &amp; Learn
             </button>
 
-            {/* Same ratio (16:9) */}
-            <div className="mb-6 rounded-xl overflow-hidden bg-black aspect-video">
+            {/* Video with animation */}
+            <div className="mb-6 rounded-xl overflow-hidden bg-black aspect-video" data-aos="zoom-in">
               <video
                 src="/choco.mp4"
                 autoPlay

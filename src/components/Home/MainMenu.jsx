@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const categories = [
   "Waffles",
@@ -287,6 +289,7 @@ const allItems = [
 ];
 
 
+
 const MainMenu = () => {
   const [selected, setSelected] = useState("Waffles");
 
@@ -294,17 +297,26 @@ const MainMenu = () => {
     ? allItems
     : allItems.filter((item) => item.category === selected);
 
+  useEffect(() => {
+    // Initialize AOS when the component mounts
+    AOS.init({
+      duration: 1000,  // Animation duration
+      easing: 'ease-in-out',  // Easing type
+      once: true,  // Ensures the animation only triggers once
+    });
+  }, []);
+
   return (
     <section id='menu' className="w-full bg-black text-white py-16 px-6">
       {/* Title */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-8" data-aos="fade-up">
         <h2 className="text-4xl md:text-6xl font-bold mb-5 text-[#a45731]">
           Main Menu
         </h2>
       </div>
 
       {/* Categories */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      <div className="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="200">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -325,8 +337,10 @@ const MainMenu = () => {
           <div
             key={i}
             className="bg-black rounded-lg text-center shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
+            data-aos="fade-up"
+            data-aos-delay={i * 200}  // Staggered animation delay based on the index
           >
-            <img src={item.image} alt={item.title} className="w-full h-60 object-contain rounded-2xl p-1"  />
+            <img src={item.image} alt={item.title} className="w-full h-60 object-contain rounded-2xl p-1" />
             <div className="p-4">
               <div className="mb-2">
                 <h3 className="text-lg font-bold text-[#a45731]">{item.title}</h3>
@@ -350,7 +364,7 @@ const MainMenu = () => {
       </div>
 
       {/* View Full Menu Button */}
-      <div className="mt-12 flex justify-center">
+      <div className="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="800">
         <button className="bg-[#a45731] hover:bg-[#a45731] text-white px-6 py-2 rounded-md font-semibold text-sm md:text-base transform hover:scale-105 transition duration-300 ease-in-out">
           View Full Menu
         </button>

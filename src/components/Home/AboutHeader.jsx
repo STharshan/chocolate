@@ -13,7 +13,7 @@ const AboutHeader = () => {
   }, []);
 
   return (
-    <section className="bg-black py-22">
+    <section className="bg-black py-22" id='about'>
       <div className="container mx-auto px-6 text-center">
         {/* Heading with caramel color */}
         <h2 

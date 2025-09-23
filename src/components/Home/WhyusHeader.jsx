@@ -13,7 +13,7 @@ const WhyusHeader = () => {
   }, []);
 
   return (
-    <section className="bg-black py-22">
+    <section className="bg-black py-22" id='whyus'>
       <div className="container mx-auto px-6 text-center">
         <h2 
           className="text-3xl font-bold text-[#a45731] mb-4"

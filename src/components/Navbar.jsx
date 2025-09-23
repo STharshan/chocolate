@@ -17,8 +17,8 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 font-semibold">
           <a href="/" className="hover:text-[#a45731]">Home</a>
-          <a href="/about" className="hover:text-[#a45731]">About</a>
-          <a href="/whyus" className="hover:text-[#a45731]">Why Us</a> {/* Added the Why Us link */}
+          <a href="#about" className="hover:text-[#a45731]">About</a>
+          <a href="#whyus" className="hover:text-[#a45731]">Why Us</a> {/* Added the Why Us link */}
         </div>
 
         {/* Desktop Button */}

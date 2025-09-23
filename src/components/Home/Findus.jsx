@@ -13,7 +13,7 @@ const FindUs = () => {
   }, []);
 
   return (
-    <section className="py-16 px-4 bg-black">
+    <section className="py-16 px-4 bg-black" id="contact">
       <div className="max-w-7xl mx-auto text-center">
         {/* Title with AOS fade-up animation */}
         <h2

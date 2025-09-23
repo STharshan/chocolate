@@ -14,7 +14,7 @@ const SignatureOfferings = () => {
 
   return (
     <section className="py-16 bg-black">
-      <div className="max-w-screen-xl mx-auto text-center">
+      <div className="max-w-screen-xl mx-auto text-center ">
         {/* Heading with caramel color */}
         <h2 
           className="text-3xl font-extrabold text-[#a45731] mb-8"

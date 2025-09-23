@@ -13,8 +13,8 @@ const LocationInfo = () => {
   }, []);
 
   return (
-    <div className="bg-black px-4 sm:px-6 lg:px-8 py-12">
-      <div className="flex flex-col md:flex-row items-center">
+    <div className="bg-black px-4 sm:px-6 lg:px-8 py-12 ">
+      <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
         <div 
           className="w-full md:w-1/2 border-4 border-[#a45731] rounded-lg"
           data-aos="fade-up"  // Adding animation to the image container

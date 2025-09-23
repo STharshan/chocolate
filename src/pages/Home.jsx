@@ -13,6 +13,7 @@ import GlutenMenu from '../components/Home/GlutenMenu';
 import VeganMenu from '../components/Home/VeganMenu';
 import Testimonial from '../components/Home/Testimonial';
 import FindUs from '../components/Home/Findus';
+import WhyExperience from '../components/Home/WhyExperience';
 
 const Home = () => {
     return (
@@ -22,6 +23,7 @@ const Home = () => {
             <LocationInfo />
             <CallToAction />
             <WhyusHeader />
+            <WhyExperience />
             <SignatureOfferings />
             <PrivateEvents />
             <UniqueFeatures />

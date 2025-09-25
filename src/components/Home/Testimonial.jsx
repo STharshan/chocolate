@@ -35,6 +35,22 @@ const testimonials = [
   {
     text: 'The service was amazing the girl that served us was wonderful, food came at the perfect time, tasted amazing',
     name: 'Marcos Brock'
+  },
+  {
+    text: 'PJ was amazing in making the food look good. Harvey showed good customer service skills and looked after me',
+    name: 'Olivia McDonagh'
+  },
+  {
+    text: 'The sundaes that we came in for were delicious, 🍨we will definitely be back! Fantastic service from Charlie who was friendly, professional & patient 👌',
+    name: 'Ben G'
+  },
+  {
+    text: 'First visit today and will certainly be back. Food was amazing, including gluten free options. Would recommend',
+    name: 'Nat Sanders'
+  },
+  {
+    text: 'I ordered two cookie doughs from here today, they were absolutely delicious',
+    name: 'Sophie Middleton'
   }
 ];
 
@@ -64,7 +80,7 @@ export default function ReviewsSlider() {
   }, []);
 
   return (
-    <section className="w-full bg-black text-white py-16 px-4 relative">
+    <section className="w-full bg-black text-white py-16 px-4 relative" id='reviews'>
       {/* Override Swiper dot colors */}
       <style jsx>{`
         .swiper-pagination-bullet {
@@ -151,6 +167,15 @@ export default function ReviewsSlider() {
             <BsArrowRight className="w-5 h-5" />
           </button>
         </div>
+
+         <div className="mt-5 flex justify-center">
+        <button
+          onClick={() => window.open ("https://www.google.com/search?sca_esv=d2ab6361f8823ac8&rlz=1C5CHFA_enCA1132CA1132&sxsrf=AE3TifOmzPbAPy10K6OSNEvl6wvMMj-CUA:1758820149469&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E59tjdSF9I67wWcXalk_9qaR86FMjeSqqkWQlrRNBecl8EkH72WqXYS4NA_8pup6J3RhMnNdK0eVf9lqcmzbCkjBfdM4KcqL_KMuKN-awtMNy3zVBg%3D%3D&q=Chocoholics+Desserts+Reviews&sa=X&ved=2ahUKEwiRou7Rs_SPAxU-dvUHHfTQGaAQ0bkNegQILhAE&biw=1366&bih=633&dpr=1", "_blank")}
+          className="bg-[#a45731] hover:bg-[#a45731]/50 border cursor-pointer mb-10 text-white px-6 py-2 rounded-md font-semibold text-sm md:text-base transform hover:scale-105 transition duration-300 ease-in-out"
+        >
+          Review
+        </button>
+      </div>
       </div>
     </section>
   );

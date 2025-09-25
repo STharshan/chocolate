@@ -38,7 +38,7 @@ const SignatureOfferings = () => {
   ];
 
   return (
-    <section className="py-16 bg-black">
+    <section className="py-16 bg-black" id='signature'>
       <div className="max-w-screen-xl mx-auto text-center">
         {/* Heading with caramel color */}
         <h2

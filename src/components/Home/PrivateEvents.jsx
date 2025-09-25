@@ -74,7 +74,7 @@ const PrivateEvents = () => {
   }, []);
 
   return (
-    <section className="bg-black py-16 px-6">
+    <section className="bg-black py-16 px-6" id='hire'>
       <div className="max-w-screen-xl mx-auto text-center">
         {/* Heading */}
         <h2

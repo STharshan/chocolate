@@ -18,7 +18,12 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8 font-semibold">
           <a href="/" className="hover:text-[#a45731]">Home</a>
           <a href="#about" className="hover:text-[#a45731]">About</a>
-          <a href="#whyus" className="hover:text-[#a45731]">Why Us</a> {/* Added the Why Us link */}
+          <a href="#whyus" className="hover:text-[#a45731]">Why Us</a> 
+          <a href="#signature" className="hover:text-[#a45731]">Signature</a>
+          <a href="#hire" className="hover:text-[#a45731]">Hire</a>
+          <a href="#menu" className="hover:text-[#a45731]">Menu</a>
+          <a href="#reviews" className="hover:text-[#a45731]">Reviews</a>
+          <a href='#contact' className="hover:text-[#a45731]">Contact</a>
         </div>
 
         {/* Desktop Button */}
@@ -44,10 +49,15 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-black text-white px-6 py-4 space-y-4 z-40">
-          <a href="/" onClick={() => setMenuOpen(false)} className="block hover:text-[#a45731]">Home</a>
-          <a href="/about" onClick={() => setMenuOpen(false)} className="block hover:text-[#a45731]">About</a>
-          <a href="/whyus" onClick={() => setMenuOpen(false)} className="block hover:text-[#a45731]">Why Us</a>
+        <div className="md:hidden absolute top-0 left-0 w-full bg-black text-white px-6 py-4 z-40">
+          <a href="/" className="block py-2 px-4 hover:text-[#a45731]">Home</a>
+          <a href="#about" className="block py-2 px-4 hover:text-[#a45731]">About</a>
+          <a href="#whyus" className="block py-2 px-4 hover:text-[#a45731]">Why Us</a> 
+          <a href="#signature" className="block py-2 px-4 hover:text-[#a45731]">Signature</a>
+          <a href="#hire" className="block py-2 px-4 hover:text-[#a45731]">Hire</a>
+          <a href="#menu" className="block py-2 px-4 hover:text-[#a45731]">Menu</a>
+          <a href="#reviews" className="block py-2 px-4 hover:text-[#a45731]">Reviews</a>
+          <a href="#contact" className="block py-2 px-4 hover:text-[#a45731]">Contact</a>
           <a
             href="https://www.just-eat.co.uk/restaurants-chocoholic-desserts-burbage/menu?utm_source=google&utm_medium=cpc&utm_campaign=CM_S_G_GBR_EN_[RES]_[ENGM]_FDSA_National&utm_campaignid=14654756066&gad_source=1&gad_campaignid=14654756066&gbraid=0AAAAAD3ULIWtKxb-e3KdHTLEQlieBNkuQ&gclid=Cj0KCQjw8p7GBhCjARIsAEhghZ2BRp8uuPVZRuARHQswip2Ai79hkWc0_Bk-AxUBTEXKZsyApz3rrUAaArQlEALw_wcB"
             onClick={() => setMenuOpen(false)}

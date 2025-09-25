@@ -25,7 +25,7 @@ const testimonials = [
     name: 'Jack Anderson',
   },
   {
-    text: 'This place is awesome! We had such a great time to end our night, and the desserts were delicious. The vibe was perfect, and the staff was super friendly, making us feel right at home.',
+    text: 'This place is awesome! We had such a great time to end our night, and the desserts were delicious. The vibe was perfect, and the staff was super friendly',
     name: 'Naz B',
   },
   {

@@ -57,7 +57,7 @@ const UniqueFeatures = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-[#a45731] p-6 rounded-lg shadow-lg text-center border-4 border-white"
+              className="bg-[#a45731] p-6 rounded-lg shadow-lg text-center border-4 border-white transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#9b4d29] active:scale-105 active:shadow-xl active:bg-[#9b4d29]"
               data-aos="fade-up"
               data-aos-delay={feature.aosDelay}
             >

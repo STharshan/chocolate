@@ -18,30 +18,14 @@ const Footer = () => {
             Where comfort meets crave-worthy. Bite into our signature burgers,
             golden fries, and urban-inspired eats in the heart of the city.
           </p>
-          <div className="flex space-x-4 text-white">
+          <div className="flex space-x-4 text-white justify-center bg-[#a45731] rounded-full p-2 w-8">
             <a
               href="https://www.facebook.com/p/Chocoholic-desserts-61561513890525/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#a45731]"
+              className="hover:text-blue-600"
             >
               <FaFacebookF />
-            </a>
-            <a
-              href="https://www.instagram.com/explore/locations/369434692915110/chocoholic-desserts/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#a45731]"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://x.com/search?q=%23Chocoholic&src=hashtag_click&f=user"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#a45731]"
-            >
-              <FaTwitter />
             </a>
           </div>
         </div>
@@ -111,14 +95,26 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-5 text-[#a45731]">Contact Info</h3>
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
             <li className="flex items-start gap-2">
-              <FiMapPin className="mt-1 text-[#a45731]" />
-              Watling St,<br />
-              Hinckley LE10 3ED,<br />
-              United Kingdom
+              <a
+                href="https://www.google.com/maps?q=Watling+St,+Hinckley+LE10+3ED,+United+Kingdom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 hover:text-[#a45731]"
+              >
+                <FiMapPin className="mt-1 text-[#a45731]" />
+                Watling St,<br />
+                Hinckley LE10 3ED,<br />
+                United Kingdom
+              </a>
             </li>
             <li className="flex items-center gap-2">
-              <FiPhone className="text-[#a45731]" />
-              +44 1455 721021
+              <a
+                href="tel: 01455721021"
+                className="flex items-center gap-2 hover:text-[#a45731]"
+              >
+                <FiPhone className="text-[#a45731]" />
+                +44 1455 721021
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <FiMail className="text-[#a45731]" />

@@ -17,21 +17,25 @@ const testimonials = [
     name: 'Sam McLaughlin',
   },
   {
-    text: 'The kitchen staff last night were absolutely shocking! Felt sorry for the girl on the till trying to do her job...',
-    name: 'Sarah Lou',
+    text: 'Food was amazing the waffles were so fresh and delicious.',
+    name: `Lyla's Youtube Channel`,
   },
   {
     text: 'We visited this evening as a family of three and were so impressed. The service was amazing...',
     name: 'Jack Anderson',
   },
   {
-    text: 'This is the Dubai chocolate. Dry dry dry filling inside and literally nothing of it...',
-    name: 'Mateen Tariq',
+    text: 'This place is awesome! We had such a great time to end our night, and the desserts were delicious. The vibe was perfect, and the staff was super friendly, making us feel right at home.',
+    name: 'Naz B',
   },
   {
     text: 'Staff are great, work really hard, super polite and can’t do enough to please...',
     name: 'Kyle Marshall',
   },
+  {
+    text: 'The service was amazing the girl that served us was wonderful, food came at the perfect time, tasted amazing',
+    name: 'Marcos Brock'
+  }
 ];
 
 function InitialAvatar({ name }) {

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -18,15 +18,29 @@ const Footer = () => {
             Where comfort meets crave-worthy. Bite into our signature burgers,
             golden fries, and urban-inspired eats in the heart of the city.
           </p>
-          <div className="flex space-x-4 text-white justify-center bg-[#a45731] rounded-full p-2 w-8">
-            <a
-              href="https://www.facebook.com/p/Chocoholic-desserts-61561513890525/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-600"
-            >
-              <FaFacebookF />
-            </a>
+          <div className="flex gap-5">
+            <div className="flex space-x-4 text-white justify-center bg-[#a45731] rounded-full p-2 w-8">
+              {/* Facebook Icon */}
+              <a
+                href="https://www.facebook.com/p/Chocoholic-desserts-61561513890525/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600"
+              >
+                <FaFacebookF />
+              </a>
+            </div>
+            <div className="flex space-x-4 text-white justify-center bg-[#a45731] rounded-full p-2 w-8">
+              {/* TikTok Icon */}
+              <a
+                href="https://www.tiktok.com/@chocoholics.desserts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black" // TikTok's color code
+              >
+                <FaTiktok />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -96,7 +110,7 @@ const Footer = () => {
           <ul className="space-y-2 text-md text-gray-400 font-semibold">
             <li className="flex items-start gap-2">
               <a
-                href="https://www.google.com/maps?q=Watling+St,+Hinckley+LE10+3ED,+United+Kingdom"
+                href="https://maps.app.goo.gl/4aCJNbQRUZEd72ZY8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-2 hover:text-[#a45731]"

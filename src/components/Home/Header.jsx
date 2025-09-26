@@ -14,9 +14,9 @@ const Header = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative text-white text-center px-4 min-h-screen bg-black">
+    <section id="hero" className="relative text-white text-center px-4 h-160  bg-black">
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-145 z-0 opacity-100 bg-black">
+      <div className="absolute inset-0 w-full  bg-black">
         <video
           className="object-cover w-full h-full"
           src="/vedio.mp4"

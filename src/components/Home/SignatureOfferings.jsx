@@ -38,7 +38,7 @@ const SignatureOfferings = () => {
   ];
 
   return (
-    <section className="py-16 bg-black" id='signature'>
+    <section className="py-16 bg-black" id="signature">
       <div className="max-w-screen-xl mx-auto text-center">
         {/* Heading with caramel color */}
         <h2
@@ -59,7 +59,10 @@ const SignatureOfferings = () => {
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className="bg-[#a45731] p-6 rounded-lg shadow-lg text-center border-4 border-white hover:scale-105 transition transform duration-300 ease-in-out"
+              className="bg-[#a45731] p-6 rounded-lg text-center border-4 border-white 
+                         transform transition-all duration-300 ease-in-out 
+                         hover:scale-105 active:scale-105 
+                         shadow-lg hover:shadow-[0_0_25px_5px_rgba(255,255,255,0.6)]"
               data-aos="fade-up"
               data-aos-delay={offering.delay}
             >

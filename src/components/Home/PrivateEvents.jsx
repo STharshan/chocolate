@@ -123,9 +123,9 @@ const PrivateEvents = () => {
   return (
     <>
       {/* Toast Notifications */}
-      <ToastContainer /> {/* Make sure this is inside the component */}
+      <ToastContainer />
 
-      <section className="bg-black py-16 px-6" id='hire'>
+      <section className="bg-black py-16 px-6" id="hire">
         <div className="max-w-screen-xl mx-auto text-center">
           {/* Heading */}
           <h2
@@ -147,7 +147,10 @@ const PrivateEvents = () => {
             {eventCards.map((card, index) => (
               <div
                 key={index}
-                className="bg-[#a45731] p-6 rounded-lg shadow-lg text-center border-4 border-white text-white hover:scale-105 transition transform duration-300 ease-in-out"
+                className="bg-[#a45731] p-6 rounded-lg text-center border-4 border-white text-white 
+                           transform transition-all duration-300 ease-in-out 
+                           hover:scale-105 active:scale-105 
+                           shadow-lg hover:shadow-[0_0_25px_5px_rgba(255,255,255,0.6)]"
                 data-aos="fade-up"
                 data-aos-delay={card.delay}
               >
@@ -161,8 +164,9 @@ const PrivateEvents = () => {
           {/* Contact Form Button */}
           <div className="mt-16">
             <button
-              onClick={() => setIsFormVisible(!isFormVisible)} // Toggle form visibility
-              className="bg-[#a45731] text-white py-3 px-6 rounded-md font-semibold transition duration-300 hover:bg-[#a45731] mb-8"
+              onClick={() => setIsFormVisible(!isFormVisible)}
+              className="bg-[#a45731] text-white py-3 px-6 rounded-md font-semibold 
+                         transition duration-300 hover:bg-[#a45731] mb-8"
               data-aos="fade-up"
               data-aos-delay="1200"
             >
@@ -343,7 +347,8 @@ const PrivateEvents = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#a45731] text-white py-2 rounded-md font-semibold transition duration-300 hover:bg-[#a45731]"
+                  className="w-full bg-[#a45731] text-white py-2 rounded-md font-semibold 
+                             transition duration-300 hover:bg-[#a45731]"
                 >
                   Submit
                 </button>

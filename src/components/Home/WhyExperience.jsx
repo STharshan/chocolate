@@ -36,15 +36,17 @@ const WhyExperience = () => {
 
   return (
     <div className="bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-12 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
           {sections.map((section, index) => (
             <div
               key={index}
-              className="bg-[#a45731] p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-white 
-                         transform transition-all duration-300 
-                         hover:scale-105 active:scale-105 
-                         hover:shadow-[0_0_25px_5px_rgba(255,255,255,0.6)]"
+              className={`bg-[#a45731] p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border-4 border-white 
+                         transform transition-all duration-300
+                         hover:scale-105 active:scale-105
+                         hover:shadow-[0_0_25px_5px_rgba(255,255,255,0.6)]
+                         md:hover:shadow-[0_0_25px_5px_rgba(255,255,255,0.6)]
+                         shadow-[0_0_12px_3px_rgba(255,255,255,0.3)]`}
               data-aos={section.aosAnimation}
             >
               <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">

@@ -41,7 +41,7 @@ const WhyExperience = () => {
           {sections.map((section, index) => (
             <div
               key={index}
-              className="bg-[#a45731] p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-white"
+              className="bg-[#a45731] p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-white active:scale-105 hover:scale-105"
               data-aos={section.aosAnimation} // Add animation for section
             >
               <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">

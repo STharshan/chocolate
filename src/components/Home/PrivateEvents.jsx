@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { FaBirthdayCake, FaHeart, FaGift, FaBuilding } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
+import emailjs from 'emailjs-com'; // Import EmailJS
+import { ToastContainer, toast } from 'react-toastify'; // Import toast and ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
 
 const PrivateEvents = () => {
   const [formData, setFormData] = useState({
@@ -49,6 +52,9 @@ const PrivateEvents = () => {
     },
   ];
 
+  // Phone Number Regex Validation
+  const phoneNumberPattern = /^(?:\+44|0)[1-9]\d{8,9}$/; // Fixed regex pattern
+
   // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -61,7 +67,48 @@ const PrivateEvents = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // You can replace this with form submission logic
+
+    // Validate phone number
+    if (!phoneNumberPattern.test(formData.phoneNumber)) {
+      toast.error('Please enter a valid phone number (starting with +44 or 0).');
+      return;
+    }
+
+    // Send the form data via emailjs
+    emailjs
+      .send(
+        'service_404lxe7', // Your EmailJS service ID
+        'template_0a4q4eh', // The ID of your email template
+        formData, // The form data to send
+        'tmUgtXKf_TwGrV1iE' // Your EmailJS user ID
+      )
+      .then(
+        (result) => {
+          console.log(result.text); // Success result
+          toast.success('Your event has been booked successfully!'); // Show success message
+
+          // Reset form data after successful submission
+          setFormData({
+            fullName: '',
+            phoneNumber: '',
+            email: '',
+            company: '',
+            eventType: '',
+            eventDate: '',
+            startTime: '',
+            endTime: '',
+            numberOfGuests: '',
+            catering: false,
+            decorations: false,
+            audioVisual: false,
+            specialRequirements: '',
+          });
+        },
+        (error) => {
+          console.error(error.text); // Error result
+          toast.error('Oops, something went wrong. Please try again!'); // Show error message
+        }
+      );
   };
 
   useEffect(() => {
@@ -74,233 +121,238 @@ const PrivateEvents = () => {
   }, []);
 
   return (
-    <section className="bg-black py-16 px-6" id='hire'>
-      <div className="max-w-screen-xl mx-auto text-center">
-        {/* Heading */}
-        <h2
-          className="text-3xl font-extrabold text-[#a45731] mb-8"
-          data-aos="fade-up"
-        >
-          Private Functions & Events
-        </h2>
-        <p
-          className="text-lg text-white mb-12"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          Perfect spaces for your special occasions
-        </p>
+    <>
+      {/* Toast Notifications */}
+      <ToastContainer /> {/* Make sure this is inside the component */}
 
-        {/* Event Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {eventCards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-[#a45731] p-6 rounded-lg shadow-lg text-center border-4 border-white text-white hover:scale-105 transition transform duration-300 ease-in-out"
-              data-aos="fade-up"
-              data-aos-delay={card.delay}
-            >
-              <div className="flex justify-center mb-4">{card.icon}</div>
-              <h3 className="text-xl font-semibold">{card.title}</h3>
-              <p className="">{card.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Form Button */}
-        <div className="mt-16">
-          <button
-            onClick={() => setIsFormVisible(!isFormVisible)} // Toggle form visibility
-            className="bg-[#a45731] text-white py-3 px-6 rounded-md font-semibold transition duration-300 hover:bg-[#a45731] mb-8"
+      <section className="bg-black py-16 px-6" id='hire'>
+        <div className="max-w-screen-xl mx-auto text-center">
+          {/* Heading */}
+          <h2
+            className="text-3xl font-extrabold text-[#a45731] mb-8"
             data-aos="fade-up"
-            data-aos-delay="1200"
           >
-            {isFormVisible ? 'Hide Contact Form' : 'Get in Touch to Book Your Event'}
-          </button>
-        </div>
+            Private Functions & Events
+          </h2>
+          <p
+            className="text-lg text-white mb-12"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Perfect spaces for your special occasions
+          </p>
 
-        {/* Contact Form */}
-        {isFormVisible && (
-          <div className="p-8 rounded-lg shadow-lg bg-white" data-aos="fade-up">
-            <h3 className="text-2xl font-bold text-[#a45731] mb-6">
-              Get in Touch to Book Your Event
-            </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Contact Information */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="fullName" className="text-[#a45731]">
-                    Full Name:
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phoneNumber" className="text-[#a45731]">
-                    Phone Number:
-                  </label>
-                  <input
-                    type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Event Details */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="eventType" className="text-[#a45731]">
-                    Event Type:
-                  </label>
-                  <input
-                    type="text"
-                    id="eventType"
-                    name="eventType"
-                    value={formData.eventType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="eventDate" className="text-[#a45731]">
-                    Event Date:
-                  </label>
-                  <input
-                    type="date"
-                    id="eventDate"
-                    name="eventDate"
-                    value={formData.eventDate}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Start and End Time */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="startTime" className="text-[#a45731]">
-                    Start Time:
-                  </label>
-                  <input
-                    type="time"
-                    id="startTime"
-                    name="startTime"
-                    value={formData.startTime}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="endTime" className="text-[#a45731]">
-                    End Time:
-                  </label>
-                  <input
-                    type="time"
-                    id="endTime"
-                    name="endTime"
-                    value={formData.endTime}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Number of Guests */}
-              <div>
-                <label htmlFor="numberOfGuests" className="text-[#a45731]">
-                  Expected Number of Guests:
-                </label>
-                <input
-                  type="number"
-                  id="numberOfGuests"
-                  name="numberOfGuests"
-                  value={formData.numberOfGuests}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                  required
-                />
-              </div>
-
-              {/* Services */}
-              <div className="space-y-4 text-[#a45731]">
-                <div className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    id="catering"
-                    name="catering"
-                    checked={formData.catering}
-                    onChange={handleChange}
-                    className="text-[#a45731]"
-                  />
-                  <label htmlFor="catering">Do you need catering?</label>
-                </div>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    id="decorations"
-                    name="decorations"
-                    checked={formData.decorations}
-                    onChange={handleChange}
-                    className="text-[#a45731]"
-                  />
-                  <label htmlFor="decorations">Do you need decorations?</label>
-                </div>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    id="audioVisual"
-                    name="audioVisual"
-                    checked={formData.audioVisual}
-                    onChange={handleChange}
-                    className="text-[#a45731]"
-                  />
-                  <label htmlFor="audioVisual">Do you need audio/visual equipment?</label>
-                </div>
-              </div>
-
-              {/* Special Requirements */}
-              <div>
-                <label htmlFor="specialRequirements" className="text-[#a45731]">
-                  Other special requirements:
-                </label>
-                <textarea
-                  id="specialRequirements"
-                  name="specialRequirements"
-                  value={formData.specialRequirements}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-[#a45731] text-white py-2 rounded-md font-semibold transition duration-300 hover:bg-[#a45731]"
+          {/* Event Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            {eventCards.map((card, index) => (
+              <div
+                key={index}
+                className="bg-[#a45731] p-6 rounded-lg shadow-lg text-center border-4 border-white text-white hover:scale-105 transition transform duration-300 ease-in-out"
+                data-aos="fade-up"
+                data-aos-delay={card.delay}
               >
-                Submit
-              </button>
-            </form>
+                <div className="flex justify-center mb-4">{card.icon}</div>
+                <h3 className="text-xl font-semibold">{card.title}</h3>
+                <p>{card.description}</p>
+              </div>
+            ))}
           </div>
-        )}
-      </div>
-    </section>
+
+          {/* Contact Form Button */}
+          <div className="mt-16">
+            <button
+              onClick={() => setIsFormVisible(!isFormVisible)} // Toggle form visibility
+              className="bg-[#a45731] text-white py-3 px-6 rounded-md font-semibold transition duration-300 hover:bg-[#a45731] mb-8"
+              data-aos="fade-up"
+              data-aos-delay="1200"
+            >
+              {isFormVisible ? 'Hide Contact Form' : 'Get in Touch to Book Your Event'}
+            </button>
+          </div>
+
+          {/* Contact Form */}
+          {isFormVisible && (
+            <div className="p-8 rounded-lg shadow-lg bg-white" data-aos="fade-up">
+              <h3 className="text-2xl font-bold text-[#a45731] mb-6">
+                Get in Touch to Book Your Event
+              </h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Contact Information */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="fullName" className="text-[#a45731]">
+                      Full Name*
+                    </label>
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phoneNumber" className="text-[#a45731]">
+                      Phone Number*
+                    </label>
+                    <input
+                      type="text"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Event Details */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="eventType" className="text-[#a45731]">
+                      Event Type*
+                    </label>
+                    <input
+                      type="text"
+                      id="eventType"
+                      name="eventType"
+                      value={formData.eventType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="eventDate" className="text-[#a45731]">
+                      Event Date*
+                    </label>
+                    <input
+                      type="date"
+                      id="eventDate"
+                      name="eventDate"
+                      value={formData.eventDate}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Start and End Time */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="startTime" className="text-[#a45731]">
+                      Start Time*
+                    </label>
+                    <input
+                      type="time"
+                      id="startTime"
+                      name="startTime"
+                      value={formData.startTime}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="endTime" className="text-[#a45731]">
+                      End Time*
+                    </label>
+                    <input
+                      type="time"
+                      id="endTime"
+                      name="endTime"
+                      value={formData.endTime}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Number of Guests */}
+                <div>
+                  <label htmlFor="numberOfGuests" className="text-[#a45731]">
+                    Expected Number of Guests*
+                  </label>
+                  <input
+                    type="number"
+                    id="numberOfGuests"
+                    name="numberOfGuests"
+                    value={formData.numberOfGuests}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                    required
+                  />
+                </div>
+
+                {/* Services */}
+                <div className="space-y-4 text-[#a45731]">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="catering"
+                      name="catering"
+                      checked={formData.catering}
+                      onChange={handleChange}
+                      className="text-[#a45731]"
+                    />
+                    <label htmlFor="catering">Do you need catering?</label>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="decorations"
+                      name="decorations"
+                      checked={formData.decorations}
+                      onChange={handleChange}
+                      className="text-[#a45731]"
+                    />
+                    <label htmlFor="decorations">Do you need decorations?</label>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="audioVisual"
+                      name="audioVisual"
+                      checked={formData.audioVisual}
+                      onChange={handleChange}
+                      className="text-[#a45731]"
+                    />
+                    <label htmlFor="audioVisual">Do you need audio/visual equipment?</label>
+                  </div>
+                </div>
+
+                {/* Special Requirements */}
+                <div>
+                  <label htmlFor="specialRequirements" className="text-[#a45731]">
+                    Other special requirements
+                  </label>
+                  <textarea
+                    id="specialRequirements"
+                    name="specialRequirements"
+                    value={formData.specialRequirements}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border-2 border-[#a45731] bg-black text-white rounded-md"
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-[#a45731] text-white py-2 rounded-md font-semibold transition duration-300 hover:bg-[#a45731]"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 

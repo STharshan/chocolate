@@ -25,7 +25,7 @@ const allItems = [
     category: "Waffles",
     fullprice: "£9.50",
     halfprice: "£7.50",
-    image: "/Chocoholic Heaven Waffle.jpg",
+    image: "/Chocoholic Heaven Waffle.png",
   },
   {
     title: "Strawberry Heaven",

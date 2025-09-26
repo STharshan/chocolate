@@ -20,7 +20,7 @@ const LocationInfo = () => {
           data-aos="fade-up"  // Adding animation to the image container
         >
           <img
-            src="placeholder.svg"
+            src="hero.jpeg"
             alt="Location Image"
             className="w-full rounded-lg shadow-lg object-cover"
           />

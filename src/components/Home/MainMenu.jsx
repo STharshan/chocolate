@@ -336,7 +336,7 @@ const MainMenu = () => {
         {filtered.map((item, i) => (
           <div
             key={i}
-            className="bg-black rounded-lg text-center shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
+            className="bg-black rounded-lg border border-[#a45731]/30 text-center shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
             data-aos="fade-up"
             data-aos-delay={i * 200}  // Staggered animation delay based on the index
           >
@@ -355,19 +355,9 @@ const MainMenu = () => {
                   </span>
                 )}
               </div>
-              <button className="w-full bg-[#a45731] hover:bg-[#a45731] text-white py-2 rounded-md flex items-center justify-center gap-2 font-semibold transition duration-300 ease-in-out">
-                <span className="text-xl">+</span> Add to Order
-              </button>
             </div>
           </div>
         ))}
-      </div>
-
-      {/* View Full Menu Button */}
-      <div className="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="800">
-        <button className="bg-[#a45731] hover:bg-[#a45731] text-white px-6 py-2 rounded-md font-semibold text-sm md:text-base transform hover:scale-105 transition duration-300 ease-in-out">
-          View Full Menu
-        </button>
       </div>
     </section>
   );

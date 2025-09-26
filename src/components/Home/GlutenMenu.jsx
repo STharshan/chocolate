@@ -20,7 +20,7 @@ const allItems = [
     category: "Waffles",
     fullprice: "£9.50",
     halfprice: "£7.50",
-    image: "/Gluten Free-Vegan Waffles-67.jpg",
+    image: "/Banoffee Waffle.jpg",
   },
   {
     title: "Raspberry Lovers",

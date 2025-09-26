@@ -6,9 +6,9 @@ const WhyExperience = () => {
   useEffect(() => {
     // Initialize AOS with desired settings
     AOS.init({
-      duration: 1000,  // Animation duration
-      easing: 'ease-in-out',  // Easing type
-      once: true,  // Ensures the animation only triggers once
+      duration: 1000, // Animation duration
+      easing: 'ease-in-out', // Easing type
+      once: true, // Ensures the animation only triggers once
     });
   }, []);
 
@@ -41,8 +41,11 @@ const WhyExperience = () => {
           {sections.map((section, index) => (
             <div
               key={index}
-              className="bg-[#a45731] p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-white active:scale-105 hover:scale-105"
-              data-aos={section.aosAnimation} // Add animation for section
+              className="bg-[#a45731] p-6 sm:p-8 rounded-2xl shadow-lg border-4 border-white 
+                         transform transition-all duration-300 
+                         hover:scale-105 active:scale-105 
+                         hover:shadow-[0_0_25px_5px_rgba(255,255,255,0.6)]"
+              data-aos={section.aosAnimation}
             >
               <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">
                 {section.title}
@@ -54,7 +57,7 @@ const WhyExperience = () => {
               {/* Video with animation */}
               <div
                 className="mb-6 rounded-xl overflow-hidden aspect-video"
-                data-aos={section.videoAnimation} // Add animation for video
+                data-aos={section.videoAnimation}
               >
                 <video
                   src={section.videoSrc}
@@ -67,7 +70,9 @@ const WhyExperience = () => {
                 />
               </div>
 
-              <p className="text-base leading-7 text-white">{section.description}</p>
+              <p className="text-base leading-7 text-white">
+                {section.description}
+              </p>
             </div>
           ))}
         </div>

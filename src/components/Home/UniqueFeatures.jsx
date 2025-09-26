@@ -1,19 +1,17 @@
 import React, { useEffect } from 'react';
-import { FaCookie, FaSearch, FaBuilding } from 'react-icons/fa'; // Updated to valid icons
+import { FaCookie, FaSearch, FaBuilding } from 'react-icons/fa';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css';
 
 const UniqueFeatures = () => {
   useEffect(() => {
-    // Initialize AOS when the component mounts
     AOS.init({
-      duration: 1000,  // Animation duration
-      easing: 'ease-in-out',  // Easing type
-      once: true,  // Trigger animation only once
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
     });
   }, []);
 
-  // Features data array
   const features = [
     {
       icon: <FaCookie className="w-16 h-16 text-white" />,
@@ -38,7 +36,7 @@ const UniqueFeatures = () => {
   return (
     <section className="bg-black py-16 px-4">
       <div className="max-w-screen-xl mx-auto text-center">
-        {/* Heading with caramel color */}
+        {/* Heading */}
         <h2
           className="text-3xl font-extrabold text-[#a45731] mb-8"
           data-aos="fade-up"
@@ -57,12 +55,20 @@ const UniqueFeatures = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-[#a45731] p-6 rounded-lg shadow-lg text-center border-4 border-white transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-[#9b4d29] active:scale-105 active:shadow-xl active:bg-[#9b4d29]"
+              className={`
+                bg-[#a45731] p-6 rounded-lg text-center border-4 border-white
+                transform transition-all duration-300
+                hover:scale-105 active:scale-105
+                hover:shadow-[0_0_35px_10px_rgba(255,255,255,0.7)]  /* Glow only on hover/tap (all devices) */
+                hover:bg-[#9b4d29] active:bg-[#9b4d29]
+              `}
               data-aos="fade-up"
               data-aos-delay={feature.aosDelay}
             >
               <div className="flex justify-center mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
+              <h3 className="text-xl font-semibold text-white">
+                {feature.title}
+              </h3>
               <p className="text-white">{feature.description}</p>
             </div>
           ))}

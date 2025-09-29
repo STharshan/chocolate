@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { Menu, X, ShoppingCart } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#whyus", label: "Why Us" },
-    { href: "#signature", label: "Signature" },
-    { href: "#hire", label: "Hire" },
-    { href: "#menu", label: "Menu" },
-    { href: "#reviews", label: "Reviews" },
-    { href: "#contact", label: "Contact" }
+    { href: "/#about", label: "About" },
+    { href: "/#whyus", label: "Why Us" },
+    { href: "/#signature", label: "Signature" },
+    { href: "/#hire", label: "Hire" },
+    { href: "/#menu", label: "Menu" },
+    { href: "/#reviews", label: "Reviews" },
+    { href: "/#contact", label: "Contact" }
   ];
 
   const orderUrl = "https://www.just-eat.co.uk/restaurants-chocoholic-desserts-burbage/menu?utm_source=google&utm_medium=cpc&utm_campaign=CM_S_G_GBR_EN_[RES]_[ENGM]_FDSA_National&utm_campaignid=14654756066&gad_source=1&gad_campaignid=14654756066&gbraid=0AAAAAD3ULIWtKxb-e3KdHTLEQlieBNkuQ&gclid=Cj0KCQjw8p7GBhCjARIsAEhghZ2BRp8uuPVZRuARHQswip2Ai79hkWc0_Bk-AxUBTEXKZsyApz3rrUAaArQlEALw_wcB";
@@ -35,13 +36,14 @@ const Navbar = () => {
           {/* Desktop Menu - Hidden on mobile and tablet */}
           <div className="hidden xl:flex items-center space-x-6">
             {navLinks.map((link) => (
-              <a
+              <HashLink
+              smooth
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-white hover:text-[#a45731] transition-colors duration-200 font-medium text-sm lg:text-base"
               >
                 {link.label}
-              </a>
+              </HashLink>
             ))}
           </div>
 

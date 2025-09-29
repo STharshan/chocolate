@@ -80,7 +80,7 @@ const FindUs = () => {
                 href="#hire"
                 className="bg-white text-[#a45731] font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-[#70371f] hover:text-white transition"
               >
-                HIRE Us For private events
+                HIRE us for private events
               </a>
             </div>
           </div>

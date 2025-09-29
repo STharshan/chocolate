@@ -68,6 +68,12 @@ const Footer = () => {
                 Contact
               </a>
             </li>
+             <li>
+              <Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link> {/* Updated link */}
+            </li>
+            <li>
+              <Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link> {/* Updated link */}
+            </li>
           </ul>
         </div>
 
@@ -94,13 +100,7 @@ const Footer = () => {
               <a href="#Veganmenu" className="hover:text-[#a45731]">
                 Vegan Menu
               </a>
-            </li>
-            <li>
-              <Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link> {/* Updated link */}
-            </li>
-            <li>
-              <Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link> {/* Updated link */}
-            </li>
+            </li>           
           </ul>
         </div>
 

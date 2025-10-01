@@ -66,11 +66,10 @@ const ChildrenMenu = () => {
     : allItems.filter((item) => item.category === selected);
 
   useEffect(() => {
-    // Initialize AOS when the component mounts
     AOS.init({
-      duration: 1000,  // Animation duration
-      easing: 'ease-in-out',  // Easing type
-      once: true,  // Ensures the animation only triggers once
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
     });
   }, []);
 
@@ -104,11 +103,12 @@ const ChildrenMenu = () => {
         {filtered.map((item, i) => (
           <div
             key={i}
-            className="bg-black rounded-lg text-center border-2 border-[#a45731]/30 shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
+            className="bg-black rounded-lg border border-[#a45731]/30 text-center shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
             data-aos="fade-up"
-            data-aos-delay={i * 200}  // Staggered animation delay based on the index
+            data-aos-delay={i * 200}
           >
-            <img src={item.image} alt={item.title} className="w-full h-100 object-cover" />
+            {/* Match same height/width as GlutenMenu */}
+            <img src={item.image} alt={item.title} className="w-full h-44 object-cover" />
             <div className="p-4">
               <div className="mb-2">
                 <h3 className="text-lg font-bold text-[#a45731]">{item.title}</h3>

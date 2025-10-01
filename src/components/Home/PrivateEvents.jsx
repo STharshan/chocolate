@@ -142,24 +142,39 @@ const PrivateEvents = () => {
             Perfect spaces for your special occasions
           </p>
 
-          {/* Event Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            {eventCards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-[#a45731] p-6 rounded-lg text-center border-4 border-white text-white 
-                           transform transition-all duration-300 ease-in-out 
-                           hover:scale-105 active:scale-105 
-                           shadow-lg hover:shadow-[0_0_25px_5px_rgba(255,255,255,0.6)]"
-                data-aos="fade-up"
-                data-aos-delay={card.delay}
-              >
-                <div className="flex justify-center mb-4">{card.icon}</div>
-                <h3 className="text-xl font-semibold">{card.title}</h3>
-                <p>{card.description}</p>
-              </div>
-            ))}
-          </div>
+         {/* Event Cards */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+  {eventCards.map((card, index) => {
+    const colors = ["#742904", "#8F431D", "#A45731", "#C37751"];
+    return (
+      <div
+        key={index}
+        className={`p-8 text-center shadow-lg transition-all duration-300 ease-in-out hover:scale-105`}
+        style={{ backgroundColor: colors[index % colors.length] }}
+        data-aos="fade-up"
+        data-aos-delay={card.delay}
+      >
+        {/* Icon */}
+        <div className="flex justify-center mb-4 text-white">
+          {card.icon}
+        </div>
+
+        {/* Title */}
+        <h3 className="text-2xl font-semibold italic text-white mb-4">
+          {card.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-white mb-6">
+          {card.description}
+        </p>
+
+       
+      </div>
+    );
+  })}
+</div>
+
 
           {/* Contact Form Button */}
           <div className="mt-16">

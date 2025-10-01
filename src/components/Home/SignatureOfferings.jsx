@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SignatureOfferings = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
       once: true,
     });
   }, []);
@@ -15,7 +15,8 @@ const SignatureOfferings = () => {
     {
       title: "Dubai Chocolate Strawberries",
       subtitle: "Local Legend",
-      description: "Our signature dessert that has quickly become the talk of Leicestershire",
+      description:
+        "Our signature dessert that has quickly become the talk of Leicestershire",
       videoSrc: "/dubaichocolate.mp4",
       delay: "400",
     },
@@ -29,7 +30,8 @@ const SignatureOfferings = () => {
     {
       title: "Kinda Surprise Waffle",
       subtitle: "Always Fresh",
-      description: "Ever-changing menu that celebrates the best of each season",
+      description:
+        "Ever-changing menu that celebrates the best of each season",
       videoSrc: "/Kindasurprisewaffle.mp4",
       delay: "800",
     },
@@ -52,37 +54,42 @@ const SignatureOfferings = () => {
           What sets us apart from the rest
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Video Grid with Always-Visible Overlay */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className={`
-                bg-[#a45731] p-6 rounded-lg text-center border-4 border-white
+              className={`relative rounded-lg overflow-hidden shadow-lg
                 transform transition-all duration-300 ease-in-out
-                shadow-[0_0_15px_4px_rgba(255,255,255,0.4)]   /* Always visible glow on mobile */
-                hover:scale-105 active:scale-105
-                md:hover:shadow-[0_0_25px_6px_rgba(255,255,255,0.7)] /* Stronger glow on desktop hover */
+                hover:scale-105
+                ${index === 0 ? "md:col-span-2 md:row-span-2" : "md:col-span-1"}
               `}
               data-aos="fade-up"
               data-aos-delay={offering.delay}
             >
-              <div className="h-64 mb-4 flex justify-center items-center overflow-hidden rounded-md">
-                <video
-                  src={offering.videoSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
+              {/* Background Video */}
+              <video
+                src={offering.videoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+
+              {/* Always Visible Overlay */}
+              <div
+                className="absolute inset-0 bg-black/40 flex flex-col justify-end 
+                           items-start p-6"
+              >
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {offering.title}
+                </h3>
+                <span className="text-sm text-gray-200 mb-2">
+                  {offering.subtitle}
+                </span>
+                <p className="text-white text-sm">{offering.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {offering.title}
-              </h3>
-              <span className="text-sm text-white block mb-2">
-                {offering.subtitle}
-              </span>
-              <p className="text-white">{offering.description}</p>
             </div>
           ))}
         </div>

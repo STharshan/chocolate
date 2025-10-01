@@ -36,8 +36,8 @@ const SignatureOfferings = () => {
       delay: "800",
     },
     {
-      title: "Lotus Biscoff Sundae",
-      subtitle: "Customer Favourite",
+      title: "Ferrero Rocher-inspired dessert",
+      subtitle: "Ferrero Rocher",
       description:
         "Creamy indulgence layered with caramel and crunchy Biscoff topping",
       videoSrc: "/oldschool.mp4", // replace with your actual video file

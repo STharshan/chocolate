@@ -35,6 +35,14 @@ const SignatureOfferings = () => {
       videoSrc: "/Kindasurprisewaffle.mp4",
       delay: "800",
     },
+    {
+      title: "Lotus Biscoff Sundae",
+      subtitle: "Customer Favourite",
+      description:
+        "Creamy indulgence layered with caramel and crunchy Biscoff topping",
+      videoSrc: "/oldschool.mp4", // replace with your actual video file
+      delay: "1000",
+    },
   ];
 
   return (
@@ -54,15 +62,19 @@ const SignatureOfferings = () => {
           What sets us apart from the rest
         </p>
 
-        {/* Video Grid with Always-Visible Overlay */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+        {/* Adjusted Grid for 4 videos */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[350px]">
           {offerings.map((offering, index) => (
             <div
               key={index}
               className={`relative rounded-lg overflow-hidden shadow-lg
                 transform transition-all duration-300 ease-in-out
                 hover:scale-105
-                ${index === 0 ? "md:col-span-2 md:row-span-2" : "md:col-span-1"}
+                ${
+                  index === 0 || index === offerings.length - 1
+                    ? "md:col-span-2 md:row-span-1"
+                    : "md:col-span-1"
+                }
               `}
               data-aos="fade-up"
               data-aos-delay={offering.delay}

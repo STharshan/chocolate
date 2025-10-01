@@ -6,7 +6,7 @@ import WhyusHeader from '../components/Home/WhyusHeader';
 import WhyExperience from '../components/Home/WhyExperience';
 import SignatureOfferings from '../components/Home/SignatureOfferings';
 import PrivateEvents from '../components/Home/PrivateEvents';
-import UniqueFeatures from '../components/Home/UniqueFeatures';
+import UniqueFeatures from '../components/Home/Newone';
 import MainMenu from '../components/Home/MainMenu';
 import ChildrenMenu from '../components/Home/ChildrenMenu';
 import GlutenMenu from '../components/Home/GlutenMenu';
@@ -25,10 +25,11 @@ const Home = () => {
             {/* <ExperienceSection /> */}
             {/* <CallToAction /> */}
             <WhyusHeader />
-            <WhyExperience />
+            {/* <WhyExperience /> */}
+             <UniqueFeatures />
             <SignatureOfferings />
             <PrivateEvents />
-            <UniqueFeatures />
+           
             {/* <WhyCall /> */}
             <MainMenu />
             <ChildrenMenu />

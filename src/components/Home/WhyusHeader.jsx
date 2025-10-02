@@ -13,18 +13,18 @@ const WhyusHeader = () => {
   }, []);
 
   return (
-    <section className="bg-black py-22" id='whyus'>
+    <section className="bg-white py-22" id="whyus">
       <div className="container mx-auto px-6 text-center">
         <h2 
           className="text-3xl font-bold text-[#a45731] mb-4"
-          data-aos="fade-up"  // Add fade-up animation to the title
+          data-aos="fade-up"
         >
           Why Choose Chocoholics Desserts?
         </h2>
         <p 
-          className="text-lg text-white"
-          data-aos="fade-up"  // Add fade-up animation to the paragraph
-          data-aos-delay="200"  // Optional delay for staggered animation
+          className="text-lg text-black"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           Discover what makes us Leicestershire's premier chocolate destination
         </p>

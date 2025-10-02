@@ -9,49 +9,19 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css';
 
 const testimonials = [
-  {
-    text: 'Charlie was amazing today, very quick and efficient friendly service, me and a friend had a Sundae...',
-    name: 'Sam McLaughlin',
-  },
-  {
-    text: 'Food was amazing the waffles were so fresh and delicious.',
-    name: `Lyla's Youtube Channel`,
-  },
-  {
-    text: 'We visited this evening as a family of three and were so impressed. The service was amazing...',
-    name: 'Jack Anderson',
-  },
-  {
-    text: 'This place is awesome! We had such a great time to end our night, and the desserts were delicious. The vibe was perfect, and the staff was super friendly',
-    name: 'Naz B',
-  },
-  {
-    text: 'Staff are great, work really hard, super polite and can’t do enough to please...',
-    name: 'Kyle Marshall',
-  },
-  {
-    text: 'The service was amazing the girl that served us was wonderful, food came at the perfect time, tasted amazing',
-    name: 'Marcos Brock'
-  },
-  {
-    text: 'PJ was amazing in making the food look good. Harvey showed good customer service skills and looked after me',
-    name: 'Olivia McDonagh'
-  },
-  {
-    text: 'The sundaes that we came in for were delicious, 🍨we will definitely be back! Fantastic service from Charlie who was friendly, professional & patient 👌',
-    name: 'Ben G'
-  },
-  {
-    text: 'First visit today and will certainly be back. Food was amazing, including gluten free options. Would recommend',
-    name: 'Nat Sanders'
-  },
-  {
-    text: 'I ordered two cookie doughs from here today, they were absolutely delicious',
-    name: 'Sophie Middleton'
-  }
+  { text: 'Charlie was amazing today, very quick and efficient friendly service, me and a friend had a Sundae...', name: 'Sam McLaughlin' },
+  { text: 'Food was amazing the waffles were so fresh and delicious.', name: `Lyla's Youtube Channel` },
+  { text: 'We visited this evening as a family of three and were so impressed. The service was amazing...', name: 'Jack Anderson' },
+  { text: 'This place is awesome! We had such a great time to end our night, and the desserts were delicious. The vibe was perfect, and the staff was super friendly', name: 'Naz B' },
+  { text: 'Staff are great, work really hard, super polite and can’t do enough to please...', name: 'Kyle Marshall' },
+  { text: 'The service was amazing the girl that served us was wonderful, food came at the perfect time, tasted amazing', name: 'Marcos Brock' },
+  { text: 'PJ was amazing in making the food look good. Harvey showed good customer service skills and looked after me', name: 'Olivia McDonagh' },
+  { text: 'The sundaes that we came in for were delicious, 🍨we will definitely be back! Fantastic service from Charlie who was friendly, professional & patient 👌', name: 'Ben G' },
+  { text: 'First visit today and will certainly be back. Food was amazing, including gluten free options. Would recommend', name: 'Nat Sanders' },
+  { text: 'I ordered two cookie doughs from here today, they were absolutely delicious', name: 'Sophie Middleton' }
 ];
 
 function InitialAvatar({ name }) {
@@ -71,17 +41,15 @@ function InitialAvatar({ name }) {
 
 export default function ReviewsSlider() {
   useEffect(() => {
-    // Initialize AOS when the component mounts
     AOS.init({
-      duration: 1000,  // Animation duration
-      easing: 'ease-in-out',  // Easing type
-      once: true,  // Ensures the animation only triggers once
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
     });
   }, []);
 
   return (
-    <section className="w-full bg-black text-white py-16 px-4 relative" id='reviews'>
-      {/* Override Swiper dot colors */}
+    <section className="w-full bg-white text-black py-16 px-4 relative" id="reviews">
       <style jsx>{`
         .swiper-pagination-bullet {
           background-color: transparent;
@@ -97,15 +65,17 @@ export default function ReviewsSlider() {
       `}</style>
 
       <div className="max-w-6xl mx-auto">
+        {/* Heading */}
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-4xl md:text-6xl font-bold mb-5 text-[#a45731]">
             What Our Customers Say
           </h2>
-          <p className="text-gray-300 text-sm md:text-lg font-semibold">
+          <p className="text-gray-600 text-sm md:text-lg font-medium">
             Don’t just take our word for it – hear from our satisfied customers
           </p>
         </div>
 
+        {/* Swiper */}
         <Swiper
           modules={[Navigation, Pagination]}
           navigation={{
@@ -124,27 +94,32 @@ export default function ReviewsSlider() {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <article className="h-full rounded-2xl border border-[#a45731]/30 bg-black p-6 shadow-lg transition hover:border-[#a45731]/70 group relative"
-                data-aos="fade-up" // Apply animation to testimonial cards
-                data-aos-delay={`${idx * 200}`} // Stagger the animation based on index
+              <article
+                className="h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition hover:shadow-xl hover:border-[#a45731] group relative"
+                data-aos="fade-up"
+                data-aos-delay={`${idx * 200}`}
               >
                 <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#a45731]/10 via-transparent to-transparent" />
+
+                {/* Top Section */}
                 <div className="flex items-center gap-3">
                   <InitialAvatar name={t.name} />
                   <div className="flex-1">
-                    <div className="flex items-center gap-1 text-yellow-400">
+                    <div className="flex items-center gap-1 text-yellow-500">
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <FiStar key={i} className="w-4 h-4 fill-yellow-400" />
+                        <FiStar key={i} className="w-4 h-4 fill-yellow-500" />
                       ))}
                     </div>
-                    <div className="mt-1 text-xs text-gray-400">Verified review</div>
+                    <div className="mt-1 text-xs text-gray-500">Verified review</div>
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm md:text-base text-gray-100 leading-relaxed min-h-[120px]">
+                {/* Review Text */}
+                <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed min-h-[120px]">
                   “{t.text}”
                 </p>
 
+                {/* Bottom Section */}
                 <div className="mt-5 flex items-center justify-between">
                   <div className="font-semibold text-[#a45731]">{t.name}</div>
                   <div className="flex items-center gap-1 px-2 py-1 rounded-full border border-[#a45731]/40 text-[#a45731]">
@@ -159,7 +134,11 @@ export default function ReviewsSlider() {
         </Swiper>
 
         {/* Custom navigation arrows */}
-        <div className="flex justify-center gap-6 mt-10" data-aos="fade-up" data-aos-delay="1000">
+        <div
+          className="flex justify-center gap-6 mt-10"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
           <button className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white transition">
             <BsArrowLeft className="w-5 h-5" />
           </button>
@@ -168,14 +147,20 @@ export default function ReviewsSlider() {
           </button>
         </div>
 
-         <div className="mt-5 flex justify-center">
-        <button
-          onClick={() => window.open ("https://www.google.com/search?sca_esv=d2ab6361f8823ac8&rlz=1C5CHFA_enCA1132CA1132&sxsrf=AE3TifOmzPbAPy10K6OSNEvl6wvMMj-CUA:1758820149469&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E59tjdSF9I67wWcXalk_9qaR86FMjeSqqkWQlrRNBecl8EkH72WqXYS4NA_8pup6J3RhMnNdK0eVf9lqcmzbCkjBfdM4KcqL_KMuKN-awtMNy3zVBg%3D%3D&q=Chocoholics+Desserts+Reviews&sa=X&ved=2ahUKEwiRou7Rs_SPAxU-dvUHHfTQGaAQ0bkNegQILhAE&biw=1366&bih=633&dpr=1", "_blank")}
-          className="bg-[#a45731] hover:bg-[#a45731]/50 border cursor-pointer mb-10 text-white px-6 py-2 rounded-md font-semibold text-sm md:text-base transform hover:scale-105 transition duration-300 ease-in-out"
-        >
-          Review
-        </button>
-      </div>
+        {/* CTA Button */}
+        <div className="mt-5 flex justify-center">
+          <button
+            onClick={() =>
+              window.open(
+                'https://www.google.com/search?q=Chocoholics+Desserts+Reviews',
+                '_blank'
+              )
+            }
+            className="bg-[#a45731] hover:bg-[#a45731]/80 border cursor-pointer mb-10 text-white px-6 py-2 rounded-md font-semibold text-sm md:text-base transform hover:scale-105 transition duration-300 ease-in-out"
+          >
+            Leave a Review
+          </button>
+        </div>
       </div>
     </section>
   );

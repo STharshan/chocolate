@@ -40,13 +40,13 @@ const SignatureOfferings = () => {
       subtitle: "Ferrero Rocher",
       description:
         "Creamy indulgence layered with caramel and crunchy Biscoff topping",
-      videoSrc: "/oldschool.mp4", // replace with your actual video file
+      videoSrc: "/oldschool.mp4",
       delay: "1000",
     },
   ];
 
   return (
-    <section className="py-16 bg-black" id="signature">
+    <section className="py-16 bg-white" id="signature">
       <div className="max-w-screen-xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h2
           className="text-3xl font-extrabold text-[#a45731] mb-8"
@@ -55,14 +55,14 @@ const SignatureOfferings = () => {
           Our Signature Offerings
         </h2>
         <p
-          className="text-lg text-white mb-12"
+          className="text-lg text-black mb-12"
           data-aos="fade-up"
           data-aos-delay="200"
         >
           What sets us apart from the rest
         </p>
 
-        {/* Adjusted Grid for 4 videos */}
+        {/* Grid for 4 videos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[350px]">
           {offerings.map((offering, index) => (
             <div
@@ -89,18 +89,17 @@ const SignatureOfferings = () => {
                 className="w-full h-full object-cover"
               />
 
-              {/* Always Visible Overlay */}
-              <div
-                className="absolute inset-0 bg-black/40 flex flex-col justify-end 
-                           items-start p-6"
-              >
-                <h3 className="text-2xl font-bold text-white mb-2">
+              {/* Text content at bottom without mask */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+                <h3 className="text-2xl font-bold text-white drop-shadow-md">
                   {offering.title}
                 </h3>
-                <span className="text-sm text-gray-200 mb-2">
+                <span className="text-sm text-gray-200 block mb-1">
                   {offering.subtitle}
                 </span>
-                <p className="text-white text-sm">{offering.description}</p>
+                <p className="text-white text-sm drop-shadow-md">
+                  {offering.description}
+                </p>
               </div>
             </div>
           ))}

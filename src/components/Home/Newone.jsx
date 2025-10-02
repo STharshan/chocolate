@@ -17,27 +17,27 @@ const UniqueFeatures = () => {
       icon: <FaCookie className="w-10 h-10 text-[#a45731]" />,
       title: "Artisanal Quality",
       description:
-        "Every dessert is handcrafted with premium Belgian chocolate and finest ingredients",
+        "Every dessert is handcrafted with premium Belgian chocolate and finest ingredients.",
       aosDelay: "400",
     },
     {
       icon: <FaSearch className="w-10 h-10 text-[#a45731]" />,
       title: "Transparent Process",
       description:
-        "Watch your desserts being made fresh, ensuring quality and creating excitement",
+        "Watch your desserts being made fresh, ensuring quality and creating excitement.",
       aosDelay: "600",
     },
     {
       icon: <FaBuilding className="w-10 h-10 text-[#a45731]" />,
       title: "Versatile Spaces",
       description:
-        "From intimate dates to large celebrations, we accommodate every occasion perfectly",
+        "From intimate dates to large celebrations, we accommodate every occasion perfectly.",
       aosDelay: "800",
     },
   ];
 
   return (
-    <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8" id="unique">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side - Features */}
         <div data-aos="fade-right">
@@ -45,7 +45,7 @@ const UniqueFeatures = () => {
             What Makes Us Unique
           </h2>
           <p
-            className="text-lg text-white mb-10"
+            className="text-lg text-gray-700 mb-10"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -62,10 +62,10 @@ const UniqueFeatures = () => {
               >
                 <div className="flex-shrink-0">{feature.icon}</div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-xl font-semibold text-black">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-700">{feature.description}</p>
                 </div>
               </div>
             ))}

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css';
 
-const categories = [
-  "Waffles",
-  "Crepes",
-];
+const categories = ["Waffles", "Crepes"];
 
 const allItems = [
   {
@@ -52,38 +49,46 @@ const allItems = [
 const VeganMenu = () => {
   const [selected, setSelected] = useState("Waffles");
 
-  const filtered = selected === "All"
-    ? allItems
-    : allItems.filter((item) => item.category === selected);
+  const filtered =
+    selected === "All"
+      ? allItems
+      : allItems.filter((item) => item.category === selected);
 
   useEffect(() => {
-    // Initialize AOS when the component mounts
     AOS.init({
-      duration: 1000,  // Animation duration
-      easing: 'ease-in-out',  // Easing type
-      once: true,  // Ensures the animation only triggers once
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
     });
   }, []);
 
   return (
-    <section id='Veganmenu' className="w-full bg-black text-white py-16 px-6">
+    <section id="Veganmenu" className="w-full bg-white text-black py-20 px-6">
       {/* Title */}
-      <div className="text-center mb-8" data-aos="fade-up">
-        <h2 className="text-4xl md:text-6xl font-bold mb-5 text-[#a45731]">
+      <div className="text-center mb-12" data-aos="fade-up">
+        <h2 className="text-4xl md:text-6xl font-extrabold text-[#a45731] mb-4 tracking-wide">
           Vegan Menu
         </h2>
+        <p className="text-lg text-gray-600">
+          100% plant-based delights crafted with love
+        </p>
       </div>
 
       {/* Categories */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="200">
+      <div
+        className="flex flex-wrap justify-center gap-3 mb-14"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelected(cat)}
-            className={`px-4 py-2 rounded-md font-medium text-sm transition duration-300 ease-in-out ${selected === cat
-              ? "bg-[#a45731] text-white"
-              : "bg-white text-black hover:bg-[#a45731] hover:text-white"
-              }`}
+            className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 ${
+              selected === cat
+                ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
+                : "bg-white text-black border-gray-300 hover:bg-[#a45731] hover:text-white hover:border-[#a45731]"
+            }`}
           >
             {cat}
           </button>
@@ -91,29 +96,39 @@ const VeganMenu = () => {
       </div>
 
       {/* Menu Grid */}
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {filtered.map((item, i) => (
           <div
             key={i}
-            className="bg-black rounded-lg border border-[#a45731]/30 text-center shadow-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:border-[#a45731] hover:border hover:z-10 hover:shadow-2xl"
+            className="bg-white rounded-2xl border border-gray-200 text-center shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             data-aos="fade-up"
-            data-aos-delay={i * 200}  // Staggered animation delay based on the index
+            data-aos-delay={i * 150}
           >
-            <img src={item.image} alt={item.title} className="w-full h-60 object-cover" />
-            <div className="p-4">
-              <div className="mb-2">
-                <h3 className="text-lg font-bold text-[#a45731]">{item.title}</h3>
-              </div>
-              <div className="mb-5">
-                <span className="text-[#a45731] font-semibold block">
-                  Full Price: {item.fullprice}
-                </span>
-                {item.halfprice && (
-                  <span className="text-[#a45731] font-semibold block mt-1">
-                    Half Price: {item.halfprice}
-                  </span>
-                )}
-              </div>
+            {/* Image */}
+            <div className="overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-48 object-cover transform transition-transform duration-500 hover:scale-110"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-[#a45731] mb-1">
+                {item.title}
+              </h3>
+              {/* ✅ Category Name */}
+              <p className="text-sm text-gray-500 mb-3">{item.category}</p>
+
+              <p className="text-gray-700 font-medium">
+                Full Price: {item.fullprice}
+              </p>
+              {item.halfprice && (
+                <p className="text-gray-600 mt-1">
+                  Half Price: {item.halfprice}
+                </p>
+              )}
             </div>
           </div>
         ))}

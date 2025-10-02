@@ -37,7 +37,10 @@ const UniqueFeatures = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8" id="unique">
+    <section
+      className="bg-white dark:bg-black py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300"
+      id="unique"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side - Features */}
         <div data-aos="fade-right">
@@ -45,7 +48,7 @@ const UniqueFeatures = () => {
             What Makes Us Unique
           </h2>
           <p
-            className="text-lg text-gray-700 mb-10"
+            className="text-lg text-gray-700 dark:text-gray-300 mb-10"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -62,10 +65,12 @@ const UniqueFeatures = () => {
               >
                 <div className="flex-shrink-0">{feature.icon}</div>
                 <div>
-                  <h3 className="text-xl font-semibold text-black">
+                  <h3 className="text-xl font-semibold text-black dark:text-white">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-700">{feature.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             ))}

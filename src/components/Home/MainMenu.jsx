@@ -1,10 +1,10 @@
 
 
 
+
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 
 const categories = [
   "Waffles",
@@ -293,6 +293,8 @@ const allItems = [
 ];
 
 
+// keep your items here (shortened for readability)
+// ...
 
 const MainMenu = () => {
   const [selected, setSelected] = useState("Waffles");
@@ -311,13 +313,16 @@ const MainMenu = () => {
   }, []);
 
   return (
-    <section id="menu" className="w-full bg-white text-black py-20 px-6">
+    <section
+      id="menu"
+      className="w-full bg-white dark:bg-black text-black dark:text-white py-20 px-6 transition-colors duration-300"
+    >
       {/* Title */}
       <div className="text-center mb-12" data-aos="fade-up">
         <h2 className="text-4xl md:text-6xl font-extrabold text-[#a45731] mb-4 tracking-wide">
           Main Menu
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-gray-600 dark:text-gray-300">
           Explore our indulgent range of desserts, crafted with love
         </p>
       </div>
@@ -335,7 +340,7 @@ const MainMenu = () => {
             className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 ${
               selected === cat
                 ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
-                : "bg-white text-black border-gray-300 hover:bg-[#a45731] hover:text-white hover:border-[#a45731]"
+                : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731]"
             }`}
           >
             {cat}
@@ -348,11 +353,11 @@ const MainMenu = () => {
         {filtered.map((item, i) => (
           <div
             key={i}
-            className="relative bg-white rounded-2xl border border-gray-200 text-center shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 text-center shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             data-aos="fade-up"
             data-aos-delay={i * 150}
           >
-            {/* Image with hover effect */}
+            {/* Image */}
             <div className="overflow-hidden">
               <img
                 src={item.image}
@@ -366,13 +371,13 @@ const MainMenu = () => {
               <h3 className="text-xl font-bold text-[#a45731] mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4">{item.category}</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{item.category}</p>
               <div className="space-y-1">
                 <span className="block text-lg font-semibold text-[#a45731]">
                   Full: {item.fullprice}
                 </span>
                 {item.halfprice && (
-                  <span className="block text-gray-700">
+                  <span className="block text-gray-700 dark:text-gray-300">
                     Half: {item.halfprice}
                   </span>
                 )}
@@ -386,9 +391,3 @@ const MainMenu = () => {
 };
 
 export default MainMenu;
-
-
-
-
-
-

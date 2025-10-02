@@ -13,7 +13,7 @@ const WhyusHeader = () => {
   }, []);
 
   return (
-    <section className="bg-white py-22" id="whyus">
+    <section className="bg-white dark:bg-black py-22 transition-colors duration-300" id="whyus">
       <div className="container mx-auto px-6 text-center">
         <h2 
           className="text-3xl font-bold text-[#a45731] mb-4"
@@ -22,7 +22,7 @@ const WhyusHeader = () => {
           Why Choose Chocoholics Desserts?
         </h2>
         <p 
-          className="text-lg text-black"
+          className="text-lg text-black dark:text-gray-300"
           data-aos="fade-up"
           data-aos-delay="200"
         >

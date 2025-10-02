@@ -13,7 +13,10 @@ const FindUs = () => {
   }, []);
 
   return (
-    <section className="py-16 px-4 bg-white" id="contact">
+    <section
+      className="py-16 px-4 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300"
+      id="contact"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2
@@ -27,7 +30,7 @@ const FindUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Contact Details Card */}
           <div
-            className="bg-gradient-to-r from-[#a45731] to-[#70371f] text-white rounded-2xl shadow-xl p-8 flex flex-col justify-between"
+            className="bg-[#8B4513] text-white rounded-2xl shadow-xl p-8 flex flex-col justify-between"
             data-aos="fade-right"
           >
             <div>
@@ -39,7 +42,7 @@ const FindUs = () => {
                   href="https://maps.app.goo.gl/4aCJNbQRUZEd72ZY8"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2 hover:text-black transition"
+                  className="flex items-start gap-2 hover:text-gray-200 transition"
                 >
                   <FiMapPin className="mt-1" />
                   Watling St,
@@ -54,7 +57,7 @@ const FindUs = () => {
                 <span className="font-semibold">Phone:</span> <br />
                 <a
                   href="tel:+441455721021"
-                  className="flex items-center gap-2 hover:text-black transition"
+                  className="flex items-center gap-2 hover:text-gray-200 transition"
                 >
                   <FiPhone />
                   +44 1455 721021
@@ -65,7 +68,7 @@ const FindUs = () => {
                 <span className="font-semibold">Email:</span> <br />
                 <a
                   href="mailto:chocoholicsdesserts@gmail.com"
-                  className="flex items-center gap-2 hover:text-black transition"
+                  className="flex items-center gap-2 hover:text-gray-200 transition"
                 >
                   <FiMail />
                   chocoholicsdesserts@gmail.com
@@ -77,7 +80,7 @@ const FindUs = () => {
             <div className="mt-6 flex justify-center">
               <a
                 href="#hire"
-                className="bg-white text-[#a45731] font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#70371f] hover:text-white transition"
+                className="bg-white text-[#8B4513] font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-black hover:text-white transition"
               >
                 Hire us for private events
               </a>

@@ -72,13 +72,16 @@ const ChildrenMenu = () => {
   }, []);
 
   return (
-    <section id="chilmenu" className="w-full bg-white text-black py-20 px-6">
+    <section
+      id="chilmenu"
+      className="w-full bg-white dark:bg-black text-black dark:text-white py-20 px-6 transition-colors duration-300"
+    >
       {/* Title */}
       <div className="text-center mb-12" data-aos="fade-up">
         <h2 className="text-4xl md:text-6xl font-extrabold text-[#a45731] mb-4 tracking-wide">
           Children's Menu
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-gray-600 dark:text-gray-300">
           Special treats made just for little chocoholics
         </p>
       </div>
@@ -96,7 +99,7 @@ const ChildrenMenu = () => {
             className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 ${
               selected === cat
                 ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
-                : "bg-white text-black border-gray-300 hover:bg-[#a45731] hover:text-white hover:border-[#a45731]"
+                : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731]"
             }`}
           >
             {cat}
@@ -109,7 +112,7 @@ const ChildrenMenu = () => {
         {filtered.map((item, i) => (
           <div
             key={i}
-            className="relative bg-white rounded-2xl border border-gray-200 text-center shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 text-center shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             data-aos="fade-up"
             data-aos-delay={i * 150}
           >
@@ -128,8 +131,8 @@ const ChildrenMenu = () => {
                 {item.title}
               </h3>
               {/* ✅ Category Name */}
-              <p className="text-sm text-gray-500 mb-2">{item.category}</p>
-              <p className="text-gray-700 font-medium">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.category}</p>
+              <p className="text-gray-700 dark:text-gray-300 font-medium">
                 Price: {item.fullprice}
               </p>
             </div>

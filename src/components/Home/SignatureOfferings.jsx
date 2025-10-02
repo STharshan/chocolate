@@ -46,7 +46,10 @@ const SignatureOfferings = () => {
   ];
 
   return (
-    <section className="py-16 bg-white" id="signature">
+    <section
+      className="py-16 bg-white dark:bg-black transition-colors duration-300"
+      id="signature"
+    >
       <div className="max-w-screen-xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h2
           className="text-3xl font-extrabold text-[#a45731] mb-8"
@@ -55,7 +58,7 @@ const SignatureOfferings = () => {
           Our Signature Offerings
         </h2>
         <p
-          className="text-lg text-black mb-12"
+          className="text-lg text-black dark:text-gray-300 mb-12"
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -89,15 +92,15 @@ const SignatureOfferings = () => {
                 className="w-full h-full object-cover"
               />
 
-              {/* Text content at bottom without mask */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+              {/* Text content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-left bg-gradient-to-t from-black/70 via-black/30 to-transparent">
                 <h3 className="text-2xl font-bold text-white drop-shadow-md">
                   {offering.title}
                 </h3>
-                <span className="text-sm text-gray-200 block mb-1">
+                <span className="text-sm text-gray-300 block mb-1">
                   {offering.subtitle}
                 </span>
-                <p className="text-white text-sm drop-shadow-md">
+                <p className="text-gray-200 text-sm drop-shadow-md">
                   {offering.description}
                 </p>
               </div>

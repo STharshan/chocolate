@@ -49,7 +49,10 @@ export default function ReviewsSlider() {
   }, []);
 
   return (
-    <section className="w-full bg-white text-black py-16 px-4 relative" id="reviews">
+    <section
+      className="w-full bg-white dark:bg-black text-black dark:text-white py-16 px-4 relative transition-colors duration-300"
+      id="reviews"
+    >
       <style jsx>{`
         .swiper-pagination-bullet {
           background-color: transparent;
@@ -70,7 +73,7 @@ export default function ReviewsSlider() {
           <h2 className="text-4xl md:text-6xl font-bold mb-5 text-[#a45731]">
             What Our Customers Say
           </h2>
-          <p className="text-gray-600 text-sm md:text-lg font-medium">
+          <p className="text-gray-600 dark:text-gray-300 text-sm md:text-lg font-medium">
             Don’t just take our word for it – hear from our satisfied customers
           </p>
         </div>
@@ -95,7 +98,7 @@ export default function ReviewsSlider() {
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
               <article
-                className="h-full rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition hover:shadow-xl hover:border-[#a45731] group relative"
+                className="h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-black p-6 shadow-md transition hover:shadow-xl hover:border-[#a45731] group relative"
                 data-aos="fade-up"
                 data-aos-delay={`${idx * 200}`}
               >
@@ -110,12 +113,14 @@ export default function ReviewsSlider() {
                         <FiStar key={i} className="w-4 h-4 fill-yellow-500" />
                       ))}
                     </div>
-                    <div className="mt-1 text-xs text-gray-500">Verified review</div>
+                    <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                      Verified review
+                    </div>
                   </div>
                 </div>
 
                 {/* Review Text */}
-                <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed min-h-[120px]">
+                <p className="mt-4 text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed min-h-[120px]">
                   “{t.text}”
                 </p>
 

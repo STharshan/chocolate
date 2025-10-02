@@ -114,7 +114,7 @@ const PrivateEvents = () => {
     <>
       <ToastContainer />
 
-      <section className="bg-white py-16 px-6" id="hire">
+      <section className="bg-white dark:bg-black py-16 px-6 transition-colors duration-300" id="hire">
         <div className="max-w-screen-xl mx-auto text-center">
           <h2
             className="text-3xl font-extrabold text-[#a45731] mb-8"
@@ -123,7 +123,7 @@ const PrivateEvents = () => {
             Private Functions & Events
           </h2>
           <p
-            className="text-lg text-black mb-12"
+            className="text-lg text-black dark:text-gray-300 mb-12"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -137,7 +137,7 @@ const PrivateEvents = () => {
               return (
                 <div
                   key={index}
-                  className="p-8 text-center shadow-lg transition-all duration-300 ease-in-out hover:scale-105"
+                  className="p-8 text-center shadow-lg transition-all duration-300 ease-in-out hover:scale-105 "
                   style={{ backgroundColor: colors[index % colors.length] }}
                   data-aos="fade-up"
                   data-aos-delay={card.delay}
@@ -167,7 +167,7 @@ const PrivateEvents = () => {
 
           {/* Contact Form */}
           {isFormVisible && (
-            <div className="p-8 rounded-lg shadow-lg bg-white" data-aos="fade-up">
+            <div className="p-8 rounded-lg shadow-lg bg-white dark:bg-gray-900 transition-colors duration-300" data-aos="fade-up">
               <h3 className="text-2xl font-bold text-[#a45731] mb-6">
                 Get in Touch to Book Your Event
               </h3>
@@ -181,7 +181,7 @@ const PrivateEvents = () => {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                       required
                     />
                   </div>
@@ -193,7 +193,7 @@ const PrivateEvents = () => {
                       name="phoneNumber"
                       value={formData.phoneNumber}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                       required
                     />
                   </div>
@@ -208,7 +208,7 @@ const PrivateEvents = () => {
                       name="eventType"
                       value={formData.eventType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                       required
                     />
                   </div>
@@ -220,7 +220,7 @@ const PrivateEvents = () => {
                       name="eventDate"
                       value={formData.eventDate}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                       required
                     />
                   </div>
@@ -235,7 +235,7 @@ const PrivateEvents = () => {
                       name="startTime"
                       value={formData.startTime}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                       required
                     />
                   </div>
@@ -247,7 +247,7 @@ const PrivateEvents = () => {
                       name="endTime"
                       value={formData.endTime}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                      className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                       required
                     />
                   </div>
@@ -261,7 +261,7 @@ const PrivateEvents = () => {
                     name="numberOfGuests"
                     value={formData.numberOfGuests}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                    className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                     required
                   />
                 </div>
@@ -309,7 +309,7 @@ const PrivateEvents = () => {
                     name="specialRequirements"
                     value={formData.specialRequirements}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black"
+                    className="w-full px-4 py-3 border-2 border-[#a45731] rounded-md text-black dark:text-white dark:bg-black"
                   ></textarea>
                 </div>
 

@@ -162,7 +162,7 @@ const allItems = [
   },
   {
     title: "Milk Chocolate",
-    category: "Cookie Dough",
+    category: "Milkshakes",
     fullprice: "£6.50",
     image: "/Milky Bar Milkshake.jpg",
   },

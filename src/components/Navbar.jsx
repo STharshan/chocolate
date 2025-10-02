@@ -85,7 +85,7 @@ const Navbar = () => {
           <div className="hidden md:flex xl:hidden">
             <a
               href={orderUrl}
-              className="flex items-center gap-2 bg-white dark:bg-white text-black dark:text-white font-semibold px-3 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm"
+              className="flex items-center gap-2 bg-white dark:bg-white text-black dark:text-black font-semibold px-3 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm"
               target="_blank"
               rel="noopener noreferrer"
             >

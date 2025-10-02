@@ -40,7 +40,7 @@ const SignatureOfferings = () => {
       subtitle: "Ferrero Rocher",
       description:
         "Creamy indulgence layered with caramel and crunchy Biscoff topping",
-      videoSrc: "/oldschool.mp4",
+      videoSrc: "/choco.mp4",
       delay: "1000",
     },
   ];

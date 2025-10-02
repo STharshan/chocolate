@@ -24,7 +24,7 @@ const Home = () => {
             {/* <PassionSection /> */}
             {/* <ExperienceSection /> */}
             {/* <CallToAction /> */}
-            <WhyusHeader />
+            {/* <WhyusHeader /> */}
             {/* <WhyExperience /> */}
              <UniqueFeatures />
             <SignatureOfferings />

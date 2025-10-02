@@ -72,7 +72,7 @@ const Navbar = () => {
             {/* Order Button */}
             <a
               href={orderUrl}
-              className="flex items-center gap-2 bg-white dark:bg-black text-black dark:text-white font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm lg:text-base"
+              className="flex items-center gap-2 bg-white dark:bg-white text-black dark:text-black font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm lg:text-base"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -85,7 +85,7 @@ const Navbar = () => {
           <div className="hidden md:flex xl:hidden">
             <a
               href={orderUrl}
-              className="flex items-center gap-2 bg-white dark:bg-black text-black dark:text-white font-semibold px-3 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm"
+              className="flex items-center gap-2 bg-white dark:bg-white text-black dark:text-white font-semibold px-3 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -120,7 +120,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="xl:hidden">
-          <div className="fixed top-16 lg:top-20 left-0 right-0 bg-black dark:bg-white border-t border-gray-800 z-50 transition-colors duration-300">
+          <div className="fixed top-16 lg:top-20 left-0 right-0 bg-black dark:bg-black  border-t border-gray-800 z-50 transition-colors duration-300">
             <div className="px-4 py-4 space-y-2">
               {navLinks.map((link) => (
                 <a
@@ -138,7 +138,7 @@ const Navbar = () => {
                 <a
                   href={orderUrl}
                   onClick={closeMenu}
-                  className="flex items-center justify-center gap-2 bg-white dark:bg-white text-black dark:text-white font-semibold px-4 py-3 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 w-full"
+                  className="flex items-center justify-center gap-2 bg-white dark:bg-white text-black dark:text-black font-semibold px-4 py-3 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 w-full"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

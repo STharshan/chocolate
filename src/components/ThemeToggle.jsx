@@ -24,7 +24,7 @@ const ThemeToggle = () => {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    document.documentElement.classList.toggle("light", newTheme === "light");
     localStorage.setItem("theme", newTheme);
   };
 

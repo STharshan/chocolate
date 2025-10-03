@@ -66,7 +66,7 @@ const Navbar = () => {
               className="p-2 rounded-md border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white transition"
               aria-label="Toggle theme"
             >
-              {dark ? <Sun size={18} /> : <Moon size={18} />}
+              {dark ?  <Moon size={18} />: <Sun size={18} />}
             </button>
 
             {/* Order Button */}
@@ -103,7 +103,7 @@ const Navbar = () => {
               className="p-2 rounded-md border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white transition"
               aria-label="Toggle theme"
             >
-              {dark ? <Sun size={18} /> : <Moon size={18} />}
+              {dark ? <Moon size={18} /> : <Sun size={18} />}
             </button>
 
             <button

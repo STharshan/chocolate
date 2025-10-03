@@ -252,12 +252,6 @@ const allItems = [
     image: "/Oreo Sundae.jpg",
   },
   {
-    title: "Strawberry",
-    category: "Sundaes",
-    fullprice: "£7.50",
-    image: "/Strawberry Sundae.jpg",
-  },
-  {
     title: "Ferrero",
     category: "Sundaes",
     fullprice: "£8.00",
@@ -282,7 +276,7 @@ const allItems = [
     category: "Milkshakes",
     fullprice: "£7.50",
     halfprice: "6.50",
-    image: "/Mango Smoothie.jpg",
+    image: "/lotus.jpg",
   },
   {
     title: "Nutella Fudge Brownie",
@@ -362,7 +356,7 @@ const MainMenu = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-56 object-cover transform transition-transform duration-500 hover:scale-110"
+                className="w-50% mx-auto  xl:mt-2 rounded-lg h-56 object-cover transform transition-transform duration-500 hover:scale-110"
               />
             </div>
 

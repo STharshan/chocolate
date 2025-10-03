@@ -12,7 +12,7 @@ const allItems = [
     title: "Smartie",
     category: "Waffles",
     fullprice: "£5.00",
-    image: "/Kids Smartie Waffle.jpg",
+    image: "/Kids Smartie Waffle.png",
   },
   {
     title: "Bubblegum",
@@ -121,7 +121,7 @@ const ChildrenMenu = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-44 object-cover transform transition-transform duration-500 hover:scale-110"
+                className="w-50% mx-auto mt-5 sm:mt-5 md:mt-0 lg:mt-5 rounded-lg h-44 object-cover transform transition-transform duration-500 hover:scale-110"
               />
             </div>
 

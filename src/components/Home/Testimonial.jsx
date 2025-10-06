@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { FiStar } from 'react-icons/fi';
@@ -24,6 +24,7 @@ const testimonials = [
   { text: 'I ordered two cookie doughs from here today, they were absolutely delicious', name: 'Sophie Middleton' }
 ];
 
+// Avatar component for initials
 function InitialAvatar({ name }) {
   const initials = name
     .split(' ')
@@ -35,6 +36,45 @@ function InitialAvatar({ name }) {
   return (
     <div className="w-12 h-12 min-w-[3rem] rounded-full bg-[#a45731]/20 border border-[#a45731]/40 flex items-center justify-center text-[#a45731] font-semibold text-base">
       {initials}
+    </div>
+  );
+}
+
+// ✅ Mobile-only glow wrapper (fixed)
+function MobileGlowWrapper({ children, delay = 0 }) {
+  const [isMobile, setIsMobile] = useState(false);
+  const [glow, setGlow] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleTouchStart = (e) => {
+    if (isMobile) {
+      e.stopPropagation(); // ⛔ stop Swiper from interfering
+      setGlow(true);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (isMobile) {
+      setTimeout(() => setGlow(false), 400); // smooth fade-out
+    }
+  };
+
+  return (
+    <div
+      data-aos="fade-up"
+      data-aos-delay={delay}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      className={`transition-all duration-500 ease-out rounded-2xl 
+        ${glow ? 'shadow-[0_0_40px_#A45731] scale-105' : ''}`}
+    >
+      {children}
     </div>
   );
 }
@@ -81,6 +121,8 @@ export default function ReviewsSlider() {
         {/* Swiper */}
         <Swiper
           modules={[Navigation, Pagination]}
+          touchStartPreventDefault={false}
+          touchMoveStopPropagation={true}
           navigation={{
             nextEl: '.swiper-button-next-custom',
             prevEl: '.swiper-button-prev-custom',
@@ -97,43 +139,43 @@ export default function ReviewsSlider() {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <article
-                className="h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-black p-6 shadow-md transition hover:shadow-xl hover:border-[#a45731] group relative"
-                data-aos="fade-up"
-                data-aos-delay={`${idx * 200}`}
-              >
-                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#a45731]/10 via-transparent to-transparent" />
+              <MobileGlowWrapper delay={idx * 200}>
+                <article
+                  className="h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-black p-6 shadow-md transition hover:shadow-xl hover:border-[#a45731] group relative"
+                >
+                  <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#a45731]/10 via-transparent to-transparent" />
 
-                {/* Top Section */}
-                <div className="flex items-center gap-3">
-                  <InitialAvatar name={t.name} />
-                  <div className="flex-1">
-                    <div className="flex items-center gap-1 text-yellow-500">
+                  {/* Top Section */}
+                  <div className="flex items-center gap-3">
+                    <InitialAvatar name={t.name} />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-1 text-yellow-500">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <FiStar key={i} className="w-4 h-4 fill-yellow-500" />
+                        ))}
+                      </div>
+                      <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                        Verified review
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="mt-4 text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed min-h-[120px]">
+                    “{t.text}”
+                  </p>
+
+                  {/* Bottom Section */}
+                  <div className="mt-5 flex items-center justify-between">
+                    <div className="font-semibold text-[#a45731]">{t.name}</div>
+                    <div className="flex items-center gap-1 px-2 py-1 rounded-full border border-[#a45731]/40 text-[#a45731]">
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <FiStar key={i} className="w-4 h-4 fill-yellow-500" />
+                        <FiStar key={i} className="w-3.5 h-3.5 fill-[#a45731]" />
                       ))}
                     </div>
-                    <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-                      Verified review
-                    </div>
                   </div>
-                </div>
-
-                {/* Review Text */}
-                <p className="mt-4 text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed min-h-[120px]">
-                  “{t.text}”
-                </p>
-
-                {/* Bottom Section */}
-                <div className="mt-5 flex items-center justify-between">
-                  <div className="font-semibold text-[#a45731]">{t.name}</div>
-                  <div className="flex items-center gap-1 px-2 py-1 rounded-full border border-[#a45731]/40 text-[#a45731]">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <FiStar key={i} className="w-3.5 h-3.5 fill-[#a45731]" />
-                    ))}
-                  </div>
-                </div>
-              </article>
+                </article>
+              </MobileGlowWrapper>
             </SwiperSlide>
           ))}
         </Swiper>

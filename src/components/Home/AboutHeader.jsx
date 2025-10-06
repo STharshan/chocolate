@@ -29,7 +29,7 @@ const MobileGlowImage = ({ src, alt }) => {
       alt={alt}
       onTouchStart={handleTouch}
       className={`rounded-lg w-full object-cover transition-all duration-500 ease-out 
-        ${glow ? 'shadow-[0_0_25px_#A45731] scale-105' : 'shadow-lg'}`}
+        ${glow ? 'shadow-[0_0_40px_#A45731] scale-115' : 'shadow-xl'}`}
     />
   );
 };

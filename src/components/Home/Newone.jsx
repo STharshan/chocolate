@@ -1,7 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCookie, FaSearch, FaBuilding } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// 🔶 MobileGlowVideo component (only touch-glow on mobile)
+const MobileGlowVideo = ({ src }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [glow, setGlow] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleTouch = () => {
+    if (isMobile) {
+      setGlow(true);
+      setTimeout(() => setGlow(false), 400);
+    }
+  };
+
+  return (
+    <div
+      onTouchStart={handleTouch}
+      className={`rounded-xl overflow-hidden transition-all duration-500 ease-out 
+        ${glow ? "shadow-[0_0_40px_#A45731] scale-105" : "shadow-lg"}`}
+    >
+      <video
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="w-full h-full object-cover aspect-video"
+      />
+    </div>
+  );
+};
 
 const UniqueFeatures = () => {
   useEffect(() => {
@@ -77,19 +115,9 @@ const UniqueFeatures = () => {
           </div>
         </div>
 
-        {/* Right Side - Video */}
+        {/* Right Side - Glow Video */}
         <div data-aos="fade-left">
-          <div className="rounded-xl overflow-hidden shadow-lg">
-            <video
-              src="/choco.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover aspect-video"
-            />
-          </div>
+          <MobileGlowVideo src="/choco.mp4" />
         </div>
       </div>
     </section>

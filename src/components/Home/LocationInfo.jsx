@@ -1,6 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+
+// 🔶 Reusable glowing image component (mobile only)
+const MobileGlowImage = ({ src, alt }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [glow, setGlow] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile(); // run once
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleTouch = () => {
+    if (isMobile) {
+      setGlow(true);
+      setTimeout(() => setGlow(false), 400); // ease-out
+    }
+  };
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onTouchStart={handleTouch}
+      className={`w-full h-[400px] object-cover rounded-lg transition-all duration-500 ease-out 
+        ${glow ? "shadow-[0_0_40px_#A45731] scale-105" : "shadow-lg"}`}
+    />
+  );
+};
 
 const LocationInfo = () => {
   useEffect(() => {
@@ -35,11 +65,7 @@ const LocationInfo = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
         {/* Left Side (Image) */}
         <div data-aos="fade-right">
-          <img
-            src="/hero.jpeg"
-            alt="Our History"
-            className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-          />
+          <MobileGlowImage src="/hero.jpeg" alt="Our History" />
         </div>
 
         {/* Right Side (Text) */}

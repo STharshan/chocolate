@@ -1,6 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
+
+// ⬇️ MobileGlowImage component
+const MobileGlowImage = ({ src, alt }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [glow, setGlow] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize(); // run once on mount
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleTouch = () => {
+    if (isMobile) {
+      setGlow(true);
+      setTimeout(() => setGlow(false), 400); // smooth ease-out
+    }
+  };
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onTouchStart={handleTouch}
+      className={`rounded-lg w-full object-cover transition-all duration-500 ease-out 
+        ${glow ? 'shadow-[0_0_25px_#A45731] scale-105' : 'shadow-lg'}`}
+    />
+  );
+};
 
 const AboutHeader = () => {
   useEffect(() => {
@@ -41,11 +73,7 @@ const AboutHeader = () => {
           
           {/* Left Side - Image */}
           <div data-aos="fade-right">
-            <img
-              src="about.png"
-              alt="Discover our story"
-              className="rounded-lg shadow-lg w-full object-cover"
-            />
+            <MobileGlowImage src="about.png" alt="Discover our story" />
           </div>
 
           {/* Right Side - Story Text */}

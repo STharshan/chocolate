@@ -50,7 +50,7 @@ export default function ReviewsSlider() {
 
   return (
     <section
-      className="w-full bg-white dark:bg-black text-black dark:text-white py-16 px-4 relative transition-colors duration-300"
+      className="w-full bg-white dark:bg-black text-black dark:text-white py-16 px-4 relative transition-colors scroll-m-10 duration-300"
       id="reviews"
     >
       <style jsx>{`

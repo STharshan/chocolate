@@ -114,7 +114,7 @@ const PrivateEvents = () => {
     <>
       <ToastContainer />
 
-      <section className="bg-white dark:bg-black py-16 px-6 transition-colors duration-300" id="hire">
+      <section className="bg-white dark:bg-black py-16 px-6 transition-colors duration-300 scroll-m-10" id="hire">
         <div className="max-w-screen-xl mx-auto text-center">
           <h2
             className="text-3xl font-extrabold text-[#a45731] mb-8"

@@ -15,7 +15,7 @@ const FindUs = () => {
   return (
     <section
       id="contact"
-      className="py-16 px-4 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300"
+      className="py-16 px-4 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 scroll-m-10"
     >
       <div className="max-w-7xl mx-auto">
         {/* Title */}

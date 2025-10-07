@@ -7,7 +7,7 @@ const Navbar = () => {
   const [dark, setDark] = useState(true); // default dark mode
 
   const navLinks = [
-    { href: "/", label: "Home" },
+    { href: "/#hero", label: "Home" },
     { href: "/#about", label: "About" },
     { href: "/#whyus", label: "Why Us" },
     { href: "/#signature", label: "Signature" },

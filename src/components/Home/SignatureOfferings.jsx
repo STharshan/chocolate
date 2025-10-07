@@ -85,7 +85,7 @@ const SignatureOfferings = () => {
 
   return (
     <section
-      className="py-16 bg-white dark:bg-black transition-colors duration-300"
+      className="py-16 bg-white dark:bg-black transition-colors duration-300 scroll-m-10"
       id="signature"
     >
       <div className="max-w-screen-xl mx-auto text-center px-4 sm:px-6 lg:px-8">

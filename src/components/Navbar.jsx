@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
 
           {/* Tablet Order Button */}
-          <div className="hidden md:flex xl:hidden">
+          <div className="hidden md:fl:hidden">
             <a
               href={orderUrl}
               className="flex items-center gap-2 bg-white dark:bg-white text-black dark:text-black font-semibold px-3 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm"
@@ -90,8 +90,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
             >
               <ShoppingCart size={16} />
-              <span className="hidden lg:inline">Order Now</span>
-              <span className="lg:hidden">Order</span>
+              <span className="inline">Order Now</span>
             </a>
           </div>
 

@@ -301,7 +301,7 @@ const MainMenu = () => {
   return (
     <section
       id="menu"
-      className="w-full bg-white dark:bg-black text-black dark:text-white py-20 px-6 transition-colors duration-300"
+      className="w-full bg-white dark:bg-black text-black dark:text-white py-0 px-6 transition-colors duration-300"
     >
       {/* Title */}
       <div className="text-center mb-12" data-aos="fade-up">

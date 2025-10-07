@@ -131,26 +131,27 @@ const PrivateEvents = () => {
           </p>
 
           {/* Event Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {eventCards.map((card, index) => {
-              const colors = ["#742904", "#8F431D", "#A45731", "#C37751"];
-              return (
-                <div
-                  key={index}
-                  className="p-8 text-center shadow-lg transition-all duration-300 ease-in-out hover:scale-105 "
-                  style={{ backgroundColor: colors[index % colors.length] }}
-                  data-aos="fade-up"
-                  data-aos-delay={card.delay}
-                >
-                  <div className="flex justify-center mb-4">{card.icon}</div>
-                  <h3 className="text-2xl font-semibold italic text-white mb-4">
-                    {card.title}
-                  </h3>
-                  <p className="text-white mb-6">{card.description}</p>
-                </div>
-              );
-            })}
-          </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+  {eventCards.map((card, index) => {
+    const colors = ["#742904", "#8F431D", "#A45731", "#C37751"];
+    return (
+      <div
+        key={index}
+        className="p-8 text-center shadow-lg transition-all duration-300 ease-in-out 
+                   hover:scale-105 active:scale-105 active:shadow-2xl cursor-pointer select-none"
+        style={{ backgroundColor: colors[index % colors.length] }}
+        data-aos="fade-up"
+        data-aos-delay={card.delay}
+      >
+        <div className="flex justify-center mb-4">{card.icon}</div>
+        <h3 className="text-2xl font-semibold italic text-white mb-4">
+          {card.title}
+        </h3>
+        <p className="text-white mb-6">{card.description}</p>
+      </div>
+    );
+  })}
+</div>
 
           {/* Contact Form Button */}
           <div className="mt-16">

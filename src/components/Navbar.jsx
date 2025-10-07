@@ -66,7 +66,7 @@ const Navbar = () => {
               className="p-2 rounded-md border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white transition"
               aria-label="Toggle theme"
             >
-              {dark ?  <Moon size={18} />: <Sun size={18} />}
+              {dark ? <Moon size={18} /> : <Sun size={18} />}
             </button>
 
             {/* Order Button */}
@@ -81,18 +81,12 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Tablet Order Button */}
-          <div className="hidden md:fl:hidden">
-            <a
-              href={orderUrl}
-              className="flex items-center gap-2 bg-white dark:bg-white text-black dark:text-black font-semibold px-3 py-2 rounded-md shadow-md hover:bg-[#a45731] hover:text-white transition-all duration-200 text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ShoppingCart size={16} />
-              <span className="inline">Order Now</span>
-            </a>
-          </div>
+          {/* Tablet Order Button - hide when mobile menu is open */}
+          {!menuOpen && (
+            <div className="hidden md:flex xl:hidden">
+             
+            </div>
+          )}
 
           {/* Mobile Menu Button */}
           <div className="xl:hidden flex items-center gap-2">
@@ -119,7 +113,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="xl:hidden">
-          <div className="fixed top-16 lg:top-20 left-0 right-0 bg-black dark:bg-black  border-t border-gray-800 z-50 transition-colors duration-300">
+          <div className="fixed top-16 lg:top-20 left-0 right-0 bg-black dark:bg-black border-t border-gray-800 z-50 transition-colors duration-300">
             <div className="px-4 py-4 space-y-2">
               {navLinks.map((link) => (
                 <a

@@ -98,11 +98,16 @@ export default function ReviewsSlider() {
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
               <article
-                className="h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-black p-6 shadow-md transition hover:shadow-xl hover:border-[#a45731] group relative"
+                className="h-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-black 
+                p-6 shadow-md transition hover:shadow-xl active:shadow-xl 
+                hover:border-[#a45731] active:border-[#a45731] 
+                group relative cursor-pointer select-none"
                 data-aos="fade-up"
                 data-aos-delay={`${idx * 200}`}
               >
-                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-[#a45731]/10 via-transparent to-transparent" />
+                <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 
+                group-hover:opacity-100 group-active:opacity-100 
+                transition bg-gradient-to-br from-[#a45731]/10 via-transparent to-transparent" />
 
                 {/* Top Section */}
                 <div className="flex items-center gap-3">
@@ -144,10 +149,10 @@ export default function ReviewsSlider() {
           data-aos="fade-up"
           data-aos-delay="1000"
         >
-          <button className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white transition">
+          <button className="swiper-button-prev-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white active:bg-[#a45731]/80 active:scale-105 transition">
             <BsArrowLeft className="w-5 h-5" />
           </button>
-          <button className="swiper-button-next-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white transition">
+          <button className="swiper-button-next-custom w-10 h-10 flex items-center justify-center rounded-full border border-[#a45731] text-[#a45731] hover:bg-[#a45731] hover:text-white active:bg-[#a45731]/80 active:scale-105 transition">
             <BsArrowRight className="w-5 h-5" />
           </button>
         </div>
@@ -161,7 +166,10 @@ export default function ReviewsSlider() {
                 '_blank'
               )
             }
-            className="bg-[#a45731] hover:bg-[#a45731]/80 border cursor-pointer mb-10 text-white px-6 py-2 rounded-md font-semibold text-sm md:text-base transform hover:scale-105 transition duration-300 ease-in-out"
+            className="bg-[#a45731] hover:bg-[#a45731]/80 active:bg-[#a45731]/70 
+            border cursor-pointer mb-10 text-white px-6 py-2 rounded-md 
+            font-semibold text-sm md:text-base transform hover:scale-105 active:scale-105 
+            transition duration-300 ease-in-out shadow-md active:shadow-lg"
           >
             Leave a Review
           </button>

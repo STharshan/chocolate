@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -286,10 +282,6 @@ const allItems = [
   },
 ];
 
-
-// keep your items here (shortened for readability)
-// ...
-
 const MainMenu = () => {
   const [selected, setSelected] = useState("Waffles");
 
@@ -331,11 +323,12 @@ const MainMenu = () => {
           <button
             key={cat}
             onClick={() => setSelected(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 ${
-              selected === cat
-                ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
-                : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731]"
-            }`}
+            className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 transform cursor-pointer select-none
+              ${
+                selected === cat
+                  ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
+                  : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731] active:bg-[#a45731] active:text-white active:border-[#a45731]"
+              }`}
           >
             {cat}
           </button>
@@ -347,7 +340,10 @@ const MainMenu = () => {
         {filtered.map((item, i) => (
           <div
             key={i}
-            className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 text-center shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 
+            text-center shadow-md overflow-hidden transition-all duration-300 
+            hover:shadow-xl active:shadow-xl hover:-translate-y-2 active:-translate-y-2 
+            hover:border-[#a45731] active:border-[#a45731] cursor-pointer select-none"
             data-aos="fade-up"
             data-aos-delay={i * 150}
           >
@@ -356,7 +352,8 @@ const MainMenu = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-50% mx-auto  xl:mt-2 rounded-lg h-56 object-cover transform transition-transform duration-500 hover:scale-110"
+                className="w-60% mx-auto xl:mt-2 mt-5 sm:mt-0 rounded-lg h-56 object-cover transform transition-transform duration-500 
+                hover:scale-110 active:scale-110"
               />
             </div>
 
@@ -365,7 +362,9 @@ const MainMenu = () => {
               <h3 className="text-xl font-bold text-[#a45731] mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{item.category}</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                {item.category}
+              </p>
               <div className="space-y-1">
                 <span className="block text-lg font-semibold text-[#a45731]">
                   Full: {item.fullprice}

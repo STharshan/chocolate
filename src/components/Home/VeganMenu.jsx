@@ -87,11 +87,13 @@ const VeganMenu = () => {
           <button
             key={cat}
             onClick={() => setSelected(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 ${
-              selected === cat
-                ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
-                : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731]"
-            }`}
+            className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 transform 
+              cursor-pointer select-none
+              ${
+                selected === cat
+                  ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
+                  : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731] active:bg-[#a45731] active:text-white active:border-[#a45731]"
+              }`}
           >
             {cat}
           </button>
@@ -103,7 +105,10 @@ const VeganMenu = () => {
         {filtered.map((item, i) => (
           <div
             key={i}
-            className="bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 text-center shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+            className="bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 
+              text-center shadow-md overflow-hidden transition-all duration-300 
+              hover:shadow-xl active:shadow-xl hover:-translate-y-2 active:-translate-y-2 
+              hover:border-[#a45731] active:border-[#a45731] cursor-pointer select-none"
             data-aos="fade-up"
             data-aos-delay={i * 150}
           >
@@ -112,7 +117,8 @@ const VeganMenu = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-48 object-cover transform transition-transform duration-500 hover:scale-110"
+                className="w-full h-48 object-cover transform transition-transform duration-500 
+                hover:scale-110 active:scale-110"
               />
             </div>
 
@@ -121,7 +127,9 @@ const VeganMenu = () => {
               <h3 className="text-xl font-bold text-[#a45731] mb-1">
                 {item.title}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">{item.category}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                {item.category}
+              </p>
 
               <p className="text-gray-700 dark:text-gray-300 font-medium">
                 Full Price: {item.fullprice}

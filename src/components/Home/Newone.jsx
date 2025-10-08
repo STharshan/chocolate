@@ -76,8 +76,8 @@ const UniqueFeatures = () => {
 
   return (
     <section
-      className="bg-white dark:bg-black py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300"
-      id="unique"
+      className="bg-white dark:bg-black py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300 scroll-m-20"
+      id="whyus"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side - Features */}

@@ -26,10 +26,10 @@ const Home = () => {
             {/* <CallToAction /> */}
             {/* <WhyusHeader /> */}
             {/* <WhyExperience /> */}
-             <UniqueFeatures />
+            <UniqueFeatures />
             <SignatureOfferings />
             <PrivateEvents />
-           
+
             {/* <WhyCall /> */}
             <MainMenu />
             <ChildrenMenu />

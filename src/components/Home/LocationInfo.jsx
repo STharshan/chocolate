@@ -42,7 +42,7 @@ const LocationInfo = () => {
   }, []);
 
   return (
-    <section className="bg-white dark:bg-black py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300 scroll-m-10" id="whyus">
+    <section className="bg-white dark:bg-black py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300 scroll-m-10" id="history">
       {/* Section Heading */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2

@@ -60,9 +60,7 @@ const Header = () => {
             margin-top: 1rem;
             padding: 0.5rem 1rem;
           }
-          section {
-            min-height: 90vh;
-          }
+         
         }
       `}</style>
     </section>

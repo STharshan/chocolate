@@ -107,7 +107,7 @@ const ChildrenMenu = () => {
       </div>
 
       {/* Menu Grid */}
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {filtered.map((item, i) => {
           const isSundae = item.category === "Sundaes";
           return (

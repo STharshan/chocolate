@@ -94,19 +94,19 @@ const allItems = [
     title: "Lotus",
     category: "Brownies",
     fullprice: "£7.50",
-    image: "/Lotus Brownie.jpg",
+    image: "/Lotus Brownie.png",
   },
   {
     title: "Ferrero Rocher",
     category: "Brownies",
     fullprice: "£8.50",
-    image: "/Gluten Free Brownie.jpg",
+    image: "/ferrero rocher brownie.jpg",
   },
   {
     title: "Strawberry Heaven",
     category: "Brownies",
     fullprice: "£7.00",
-    image: "/Strawberry Brownie.jpg",
+    image: "/strawberry heaven brownie.jpg",
   },
   {
     title: "Oreo",
@@ -124,7 +124,7 @@ const allItems = [
     title: "Mint",
     category: "Brownies",
     fullprice: "£7.50",
-    image: "/Mint Brownie.jpg",
+    image: "/mint-brownie.jpg",
   },
   {
     title: "Oreo",
@@ -298,6 +298,13 @@ const MainMenu = () => {
     });
   }, []);
 
+  // categories with smaller image width
+  const smallImageCategories = [
+    "Gelato In A Tub or A Cone",
+    "Sundaes",
+    "Milkshakes",
+  ];
+
   return (
     <section
       id="menu"
@@ -324,10 +331,9 @@ const MainMenu = () => {
             key={cat}
             onClick={() => setSelected(cat)}
             className={`px-5 py-2 rounded-full text-sm font-semibold border transition duration-300 transform cursor-pointer select-none
-              ${
-                selected === cat
-                  ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
-                  : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731] active:bg-[#a45731] active:text-white active:border-[#a45731]"
+              ${selected === cat
+                ? "bg-[#a45731] text-white border-[#a45731] shadow-md scale-105"
+                : "bg-white dark:bg-black text-black dark:text-white border-gray-300 dark:border-gray-600 hover:bg-[#a45731] hover:text-white hover:border-[#a45731] active:bg-[#a45731] active:text-white active:border-[#a45731]"
               }`}
           >
             {cat}
@@ -337,47 +343,54 @@ const MainMenu = () => {
 
       {/* Menu Grid */}
       <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
-        {filtered.map((item, i) => (
-          <div
-            key={i}
-            className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 
-            text-center shadow-md overflow-hidden transition-all duration-300 
-            hover:shadow-xl active:shadow-xl hover:-translate-y-2 active:-translate-y-2 
-            hover:border-[#a45731] active:border-[#a45731] cursor-pointer select-none"
-            data-aos="fade-up"
-            data-aos-delay={i * 150}
-          >
-            {/* Image */}
-            <div className="overflow-hidden">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-60% mx-auto xl:mt-2 mt-5 sm:mt-0 rounded-lg h-56 object-cover transform transition-transform duration-500 
-                hover:scale-110 active:scale-110"
-              />
-            </div>
+        {filtered.map((item, i) => {
+          const isSmallCategory = smallImageCategories.includes(item.category);
 
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-[#a45731] mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                {item.category}
-              </p>
-              <div className="space-y-1">
-                <span className="block text-lg font-semibold text-[#a45731]">
-                  Full: {item.fullprice}
-                </span>
-                {item.halfprice && (
-                  <span className="block text-gray-700 dark:text-gray-300">
-                    Half: {item.halfprice}
+          return (
+            <div
+              key={i}
+              className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 
+              text-center shadow-md overflow-hidden transition-all duration-300 
+              hover:shadow-xl active:shadow-xl hover:-translate-y-2 active:-translate-y-2 
+              hover:border-[#a45731] active:border-[#a45731] cursor-pointer select-none"
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
+            >
+              {/* Image */}
+              <div className="overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={
+                    isSmallCategory
+                      ? "w-[60%] mx-auto xl:mt-2 mt-5 sm:mt-0 rounded-lg h-56 object-cover transform transition-transform duration-500 hover:scale-110 active:scale-110"
+                      : "w-full h-48 object-cover transform transition-transform duration-500 hover:scale-110 active:scale-110"
+                  }
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#a45731] mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  {item.category}
+                </p>
+                <div className="space-y-1">
+                  <span className="block text-lg font-semibold text-[#a45731]">
+                    Full: {item.fullprice}
                   </span>
-                )}
+                  {item.halfprice && (
+                    <span className="block text-gray-700 dark:text-gray-300">
+                      Half: {item.halfprice}
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

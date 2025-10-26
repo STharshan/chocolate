@@ -108,40 +108,46 @@ const ChildrenMenu = () => {
 
       {/* Menu Grid */}
       <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 max-w-5xl mx-auto">
-        {filtered.map((item, i) => (
-          <div
-            key={i}
-            className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 
-            text-center shadow-md overflow-hidden transition-all duration-300 
-            hover:shadow-xl active:shadow-xl hover:-translate-y-2 active:-translate-y-2 
-            hover:border-[#a45731] active:border-[#a45731] cursor-pointer select-none"
-            data-aos="fade-up"
-            data-aos-delay={i * 150}
-          >
-            {/* Image */}
-            <div className="overflow-hidden">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-50% mx-auto mt-5 sm:mt-5 md:mt-0 lg:mt-5 rounded-lg h-44 object-cover transform transition-transform duration-500 
-                hover:scale-110 active:scale-110"
-              />
-            </div>
+        {filtered.map((item, i) => {
+          const isSundae = item.category === "Sundaes";
+          return (
+            <div
+              key={i}
+              className="relative bg-white dark:bg-black rounded-2xl border border-gray-200 dark:border-gray-700 
+              text-center shadow-md overflow-hidden transition-all duration-300 
+              hover:shadow-xl active:shadow-xl hover:-translate-y-2 active:-translate-y-2 
+              hover:border-[#a45731] active:border-[#a45731] cursor-pointer select-none"
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
+            >
+              {/* Image */}
+              <div className="overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={
+                    isSundae
+                      ? "w-[50%] mx-auto mt-5 sm:mt-5 md:mt-0 lg:mt-5 rounded-lg h-44 object-cover transform transition-transform duration-500 hover:scale-110 active:scale-110"
+                      : "w-full h-48 object-cover transform transition-transform duration-500 hover:scale-110 active:scale-110"
+                  }
+                />
+              </div>
 
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-[#a45731] mb-1">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                {item.category}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 font-medium">
-                Price: {item.fullprice}
-              </p>
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#a45731] mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  {item.category}
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 font-medium">
+                  Price: {item.fullprice}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

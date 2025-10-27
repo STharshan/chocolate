@@ -74,10 +74,10 @@ const SignatureOfferings = () => {
       delay: "800",
     },
     {
-      title: "Ferrero Rocher-inspired dessert",
+      title: "Ferrero Rocher cookie dough",
       subtitle: "Ferrero Rocher",
       description:
-        "Creamy indulgence layered with caramel and crunchy Biscoff topping",
+        "Warm, Nutty Chocolate, topped with Ferreros",
       videoSrc: "/choco.mp4",
       delay: "1000",
     },

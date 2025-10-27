@@ -77,7 +77,7 @@ const LocationInfo = () => {
             Opened August 2024
           </p>
           <p className="text-base text-gray-700 dark:text-gray-400 mb-4">
-            Nestled in the heart of Hinckley, Leicestershire, Chocoholics
+            Nestled in the outskirts of Hinckley, Leicestershire, Chocoholics
             Desserts opened its doors in August 2024 with a single mission: to
             create an indulgent wonderland where chocolate lovers can experience
             pure bliss.

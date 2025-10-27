@@ -157,12 +157,6 @@ const allItems = [
     image: "/Lotus Milk Cake.jpg",
   },
   {
-    title: "Milk Chocolate",
-    category: "Milkshakes",
-    fullprice: "£6.50",
-    image: "/Milky Bar Milkshake.jpg",
-  },
-  {
     title: "White Chocolate",
     category: "Cookie Dough",
     fullprice: "£6.50",
@@ -236,16 +230,16 @@ const allItems = [
     image: "/Strawberry Sundae.jpg",
   },
   {
-    title: "Biscoff",
-    category: "Sundaes",
-    fullprice: "£8.00",
-    image: "/Biscoffe Sundae.jpg",
-  },
-  {
     title: "Oreo",
     category: "Sundaes",
     fullprice: "£8.00",
     image: "/Oreo Sundae.jpg",
+  },
+  {
+    title: "Biscoff",
+    category: "Sundaes",
+    fullprice: "£8.00",
+    image: "/Biscoffe Sundae.jpg",
   },
   {
     title: "Ferrero",
@@ -253,12 +247,18 @@ const allItems = [
     fullprice: "£8.00",
     image: "/Nutty Professor Sundae.jpg",
   },
+    {
+    title: "Milk Chocolate",
+    category: "Milkshakes",
+    fullprice: "£6.50",
+    image: "/milkybar milkshake.jpg",
+  },
   {
     title: "Chocolate Bar",
     category: "Milkshakes",
     fullprice: "£7.00",
     halfprice: "6.00",
-    image: "/Twix Milkshake-14.jpg",
+    image: "/twix milkshake.jpg",
   },
   {
     title: "Raspberry Milkshake",
@@ -272,13 +272,13 @@ const allItems = [
     category: "Milkshakes",
     fullprice: "£7.50",
     halfprice: "6.50",
-    image: "/lotus.jpg",
+    image: "/nutella milkshake.jpg",
   },
   {
     title: "Nutella Fudge Brownie",
     category: "Milkshakes",
     fullprice: "£9.00",
-    image: "/Reeces Milkshake.png",
+    image: "/reeeses milkshake.jpg",
   },
 ];
 

@@ -20,9 +20,9 @@ const Footer = () => {
             src="/logo.png"
             alt="logo"
           />
-          <p className="text-md font-semibold text-gray-400 mb-4 leading-relaxed">
-            Where comfort meets crave-worthy. Bite into our signature burgers,
-            golden fries, and urban-inspired eats in the heart of the city.
+          <p className="text-[15px] font-semibold text-gray-400 mb-4 leading-relaxed">
+            Where comfort meets sweet cravings. Indulge in our signature desserts, rich flavors, 
+            and irresistible treats baked fresh in the heart of the city.
           </p>
           <div className="flex gap-5">
             <div className="flex text-white justify-center bg-[#a45731] rounded-full p-2 w-8">

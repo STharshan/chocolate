@@ -121,7 +121,7 @@ const SignatureOfferings = () => {
               <MobileGlowVideo src={offering.videoSrc} />
 
               {/* Text overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-left bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-b-lg">
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-left bg-linear-to-t from-black/70 via-black/30 to-transparent rounded-b-lg">
                 <h3 className="text-2xl font-bold text-white drop-shadow-md">
                   {offering.title}
                 </h3>

@@ -107,7 +107,7 @@ export default function ReviewsSlider() {
               >
                 <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 
                 group-hover:opacity-100 group-active:opacity-100 
-                transition bg-gradient-to-br from-[#a45731]/10 via-transparent to-transparent" />
+                transition bg-linear-to-br from-[#a45731]/10 via-transparent to-transparent" />
 
                 {/* Top Section */}
                 <div className="flex items-center gap-3">

@@ -5,42 +5,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
-  <link rel="icon" type="image" href="/logo-dark.png" />
-  <title>Chocolate Dessert</title>
 
-  <!-- Import Classic Heading Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://chocoholicsdesserts.co.uk/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo-dark.png" />
+
+  <!-- Page Title -->
+  <title>Chocoholics Desserts | Chocolate Dessert Shop in Hinckley</title>
+
+  <!-- SEO Description -->
+  <meta
+    name="description"
+    content="Chocoholics Desserts in Hinckley serves indulgent waffles, crepes, cookie dough, sundaes, gelato and more. Perfect for late-night treats, family desserts, and chocolate lovers."
+  />
+
+  <!-- Open Graph (Facebook / LinkedIn etc.) -->
+  <meta property="og:title" content="Chocoholics Desserts | Hinckley" />
+  <meta
+    property="og:description"
+    content="Dive into handcrafted waffles, crepes, cookie dough, sundaes and gelato at Chocoholics Desserts in Hinckley. Your new favourite dessert spot."
+  />
+  <!-- Use your preview image from public/bgblack.png -->
+  <meta property="og:image" content="https://chocoholicsdesserts.co.uk/bgblack.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chocoholicsdesserts.co.uk/" />
+
+  <!-- Twitter / X Preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chocoholics Desserts | Hinckley" />
+  <meta
+    name="twitter:description"
+    content="Freshly made chocolate desserts, waffles, crepes, sundaes and more – made for true chocoholics."
+  />
+  <meta name="twitter:image" content="https://chocoholicsdesserts.co.uk/bgblack.png" />
+
+  <!-- Classic Heading Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     /* Body text: readable classic serif */
     body {
       font-family: Georgia, "Times New Roman", Times, serif;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Headings: classic Cinzel (like in your screenshot) */
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Cinzel', serif;
+    /* Headings: classic Cinzel */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Cinzel", serif;
       font-weight: 400;
       letter-spacing: 2px;
     }
   </style>
 
-  <!-- Set initial theme before app mounts to avoid flash -->
+  <!-- Set initial theme BEFORE the app mounts to avoid flash -->
   <script>
     (() => {
-      const stored = localStorage.getItem('theme'); // 'dark' | 'light' | null
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const useDark = stored ? stored === 'dark' : prefersDark;
-      document.documentElement.classList.toggle('dark', useDark);
+      const stored = localStorage.getItem("theme"); // 'dark' | 'light' | null
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const useDark = stored ? stored === "dark" : prefersDark;
+      document.documentElement.classList.toggle("dark", useDark);
     })();
   </script>
 </head>
 
 <body>
-  <div id="root">
-    
-  </div>
+  <div id="root"></div>
 
+  <!-- Your React/Vite entry -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

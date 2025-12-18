@@ -5,7 +5,6 @@ import { HashLink } from "react-router-hash-link";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dark, setDark] = useState(true);
-  const [openOrder, setOpenOrder] = useState(false); // 🔹 ORDER STATE
 
   const navLinks = [
     { href: "/#hero", label: "Home" },
@@ -26,10 +25,8 @@ const Navbar = () => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  // 🛒 Load order widget & auto-open
-  useEffect(() => {
-    if (!openOrder) return;
-
+  // 🛒 OPEN ORDER MENU (FIXED)
+  const openOrderMenu = () => {
     // Load script once
     if (!document.getElementById("glf-script")) {
       const script = document.createElement("script");
@@ -40,17 +37,15 @@ const Navbar = () => {
       document.body.appendChild(script);
     }
 
-    // Auto-click hidden trigger
+    // Click widget every time
     const interval = setInterval(() => {
       const btn = document.querySelector(".glf-button");
       if (btn) {
         btn.click();
         clearInterval(interval);
       }
-    }, 300);
-
-    return () => clearInterval(interval);
-  }, [openOrder]);
+    }, 200);
+  };
 
   return (
     <>
@@ -89,7 +84,7 @@ const Navbar = () => {
               </button>
 
               <button
-                onClick={() => setOpenOrder(true)}
+                onClick={openOrderMenu}
                 className="flex items-center gap-2 bg-white text-black font-semibold px-4 py-2 rounded-md hover:bg-[#a45731] hover:text-white transition"
               >
                 <ShoppingCart size={18} />
@@ -129,7 +124,7 @@ const Navbar = () => {
 
             <button
               onClick={() => {
-                setOpenOrder(true);
+                openOrderMenu();
                 closeMenu();
               }}
               className="mt-4 w-full bg-white text-black py-3 rounded-md flex justify-center gap-2 font-semibold"
